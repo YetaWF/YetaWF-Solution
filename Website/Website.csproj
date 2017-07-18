@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A3B319C1-9328-4C4B-8A52-510F09317809}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YetaWF</RootNamespace>
+    <AssemblyName>YetaWF</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <MvcBuildViews Condition="'$(Configuration)'=='Debug'">false</MvcBuildViews>
+    <MvcBuildViews Condition="'$(Configuration)'=='Release'">true</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup5.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AddOns\Web.config" />
+    <Content Include="Data\Appsettings.json" />
+    <Content Include="Data\MimeSettings.json" />
+    <Content Include="Data\LanguageSettings.json" />
+    <Content Include="Data\Web.config" />
+    <Content Include="logo.jpg" />
+    <Content Include="Maintenance\Offline For Maintenance.html" />
+    <Content Include="Maintenance\Offline.html" />
+    <Content Include="Maintenance\StartupDone.html" />
+    <Content Include="Maintenance\StartupPage5.html" />
+    <Content Include="Maintenance\StartupPage6.html" />
+    <Content Include="Maintenance\Unsupported Browser.html" />
+    <Content Include="Content\Web.config" />
+    <Content Include="AddonsCustom\Web.config" />
+    <None Include="packages.config" />
+    <Content Include="Maintenance\UpdateIndicator.txt" />
+    <Content Include="Global.asax" />
+    <Content Include="robots.txt" />
+    <Content Include="Sites\Web.config" />
+    <Content Include="SiteTemplates\Web.config" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Scripts\Web.config" />
+    <Content Include="Vault\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SiteFiles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CoreComponents\Core\Core.csproj">
+      <Project>{71ACC7AC-2622-4127-B925-D058C01A39E5}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CoreComponents\CssHttpHandler\CssHttpHandler.csproj">
+      <Project>{7881D87A-C00C-4765-BABB-4D76F558693E}</Project>
+      <Name>CssHttpHandler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CoreComponents\ImageHttpHandler\ImageHttpHandler.csproj">
+      <Project>{D07F04A5-A3DF-42BB-9CD9-7719BB765A94}</Project>
+      <Name>ImageHttpHandler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataProvider\File\File.csproj">
+      <Project>{F0DF6C3B-2B71-4526-8FD0-AC2B731B2C3B}</Project>
+      <Name>File</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataProvider\Localization\Localization.csproj">
+      <Project>{95824F1C-E1A5-42D3-915A-D55F10882743}</Project>
+      <Name>Localization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataProvider\ModuleDefinition\ModuleDefinition.csproj">
+      <Project>{348F2A6B-57F5-47A3-8A46-3F44529ACD83}</Project>
+      <Name>ModuleDefinition</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataProvider\SQL\SQL.csproj">
+      <Project>{22F3EC05-EC47-42B9-87CC-FF4D5494F8A4}</Project>
+      <Name>SQL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\AddThis\AddThis.csproj">
+      <Project>{9D25CE01-007F-458C-991F-8BF07C5C97F9}</Project>
+      <Name>AddThis</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\Backups\Backups.csproj">
+      <Project>{D3DE0B35-DA4F-4A3E-A5DE-EBCD584D46E1}</Project>
+      <Name>Backups</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\Basics\Basics.csproj">
+      <Project>{A37EAA28-3B4D-4865-8170-830C2A4A97CC}</Project>
+      <Name>Basics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\Blog\Blog.csproj">
+      <Project>{CB2DE6AC-AD35-4CF1-B77C-72B4AAF4E9A6}</Project>
+      <Name>Blog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\BootstrapCarousel\BootstrapCarousel.csproj">
+      <Project>{F5ECEE0B-353E-4FDC-8F62-6CD387355221}</Project>
+      <Name>BootstrapCarousel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\CurrencyConverter\CurrencyConverter.csproj">
+      <Project>{C2EED268-B63B-4A74-927E-FE4C13ADB3C5}</Project>
+      <Name>CurrencyConverter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\Dashboard\Dashboard.csproj">
+      <Project>{E2B03BB1-678D-43EC-B8A9-54F8C5EBFF9D}</Project>
+      <Name>Dashboard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\DevTests\DevTests.csproj">
+      <Project>{B96812CB-9A47-4504-93B2-B6F095B7AA1D}</Project>
+      <Name>DevTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\Feedback\Feedback.csproj">
+      <Project>{E81434B2-F1F7-4794-B31A-18BB45BA3DB7}</Project>
+      <Name>Feedback</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\Feed\Feed.csproj">
+      <Project>{5690B5B4-D3FE-4F3B-A9AD-2A4672C8A6F0}</Project>
+      <Name>Feed</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\Identity\Identity.csproj">
+      <Project>{86178F8E-67E8-4D3D-9800-65C88D0B5849}</Project>
+      <Name>Identity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\IFrame\IFrame.csproj">
+      <Project>{F8EA2568-5E19-4BE1-90C5-53DFC69344DF}</Project>
+      <Name>IFrame</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\ImageRepository\ImageRepository.csproj">
+      <Project>{D46C5A31-8CB6-43A9-BB45-5C515F7A4A38}</Project>
+      <Name>ImageRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\KeepAlive\KeepAlive.csproj">
+      <Project>{77CFBA7F-37E4-40AD-AF80-A263A1A3E3AD}</Project>
+      <Name>KeepAlive</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\Languages\Languages.csproj">
+      <Project>{E6751E29-EEA1-4319-B050-38E1F2C7EC0D}</Project>
+      <Name>Languages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\Lightbox\Lightbox.csproj">
+      <Project>{BDBF17B7-A629-4958-B804-BF7FFCF1671A}</Project>
+      <Name>Lightbox</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\Logging\Logging.csproj">
+      <Project>{EAE0AE43-F32E-436D-8F4E-302AACB99C16}</Project>
+      <Name>Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\Menus\Menus.csproj">
+      <Project>{AC2FC261-B14A-489A-809B-89E878A44A77}</Project>
+      <Name>Menus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\ModuleEdit\ModuleEdit.csproj">
+      <Project>{388F8552-48F1-4A3A-8CD7-117DA776783A}</Project>
+      <Name>ModuleEdit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\Modules\Modules.csproj">
+      <Project>{BD718C2F-20E1-432A-A1EB-E6E6F5F1BD30}</Project>
+      <Name>Modules</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\Packages\Packages.csproj">
+      <Project>{60C5B361-6A9C-4215-B3A1-A09A2BF2C14D}</Project>
+      <Name>Packages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\PageEar\PageEar.csproj">
+      <Project>{39D6B318-BA7F-499C-8D2F-086C6A222FE1}</Project>
+      <Name>PageEar</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\PageEdit\PageEdit.csproj">
+      <Project>{A86C1F1B-940F-414C-B23A-102432A69D5E}</Project>
+      <Name>PageEdit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\Pages\Pages.csproj">
+      <Project>{ABD7D692-A3D1-4175-A88B-A4B9EE97F61D}</Project>
+      <Name>Pages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\Scheduler\Scheduler.csproj">
+      <Project>{343FCD1D-7B74-4B71-BB1A-A4370F482B23}</Project>
+      <Name>Scheduler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\Search\Search.csproj">
+      <Project>{8D2B0F98-869F-43ED-AE36-A61F54AF8E2A}</Project>
+      <Name>Search</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\Security\Security.csproj">
+      <Project>{666E9261-0153-41B3-B05F-C183664C0D10}</Project>
+      <Name>Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\SiteProperties\SiteProperties.csproj">
+      <Project>{6346AD84-48D7-4C28-8BCB-5D8B1CAA8735}</Project>
+      <Name>SiteProperties</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\Sites\Sites.csproj">
+      <Project>{18510085-652B-49E8-8EA8-52EAEB8F27DC}</Project>
+      <Name>Sites</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\SlideShow\SlideShow.csproj">
+      <Project>{D3A7A68B-9A97-4570-9F34-CD62BA041DAE}</Project>
+      <Name>SlideShow</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\SyntaxHighlighter\SyntaxHighlighter.csproj">
+      <Project>{6BA26781-9DCB-4487-844E-80F46F4A713F}</Project>
+      <Name>SyntaxHighlighter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\Text\Text.csproj">
+      <Project>{57B84B67-DA40-41B3-8C37-B544F3730C25}</Project>
+      <Name>Text</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\TinyLanguage\TinyLanguage.csproj">
+      <Project>{4D7F8814-7A93-47B0-BD72-579F5E293D84}</Project>
+      <Name>TinyLanguage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\TinyLogin\TinyLogin.csproj">
+      <Project>{E0AD8487-7A53-4BE7-B012-5D2377F5CCEA}</Project>
+      <Name>TinyLogin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\UserProfile\UserProfile.csproj">
+      <Project>{0A7C8A1C-F00B-47B8-9C8B-73819964860A}</Project>
+      <Name>UserProfile</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\UserSettings\UserSettings.csproj">
+      <Project>{4C31A20F-E728-4C32-85D3-CB8A4D4241B8}</Project>
+      <Name>UserSettings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\Visitors\Visitors.csproj">
+      <Project>{13C9BCDD-B595-4A96-B541-A493086ABFEE}</Project>
+      <Name>Visitors</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Skins\YetaWF\BootstrapSample\BootstrapSample.csproj">
+      <Project>{611AF6D1-F807-40A9-A8B2-3EA3EFC4F11A}</Project>
+      <Name>BootstrapSample</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Skins\YetaWF\BusinessCasualSkin\BusinessCasualSkin.csproj">
+      <Project>{DF925936-E1E3-4421-B003-0787F2CA0249}</Project>
+      <Name>BusinessCasualSkin</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v12.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50933</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50933/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>http://YetaWFDist4.com</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
+  </Target>
+</Project>
