@@ -7,10 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Website", "Website\Website.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CopySite", "CopySite", "{B5F2C94C-C522-4617-8EB6-9F0D485CC1C9}"
 	ProjectSection(SolutionItems) = preProject
-		Utilities\CopySite\CopySite FROM DEV.Generic.bat = Utilities\CopySite\CopySite FROM DEV.Generic.bat
-		Utilities\CopySite\CopySite FROM DEV.Generic.txt = Utilities\CopySite\CopySite FROM DEV.Generic.txt
-		Utilities\CopySite\CopySite TO PROD.Generic.bat = Utilities\CopySite\CopySite TO PROD.Generic.bat
-		Utilities\CopySite\CopySite TO PROD.Generic.txt = Utilities\CopySite\CopySite TO PROD.Generic.txt
+		Utilities\CopySite\CopySite FROM DEV.bat = Utilities\CopySite\CopySite FROM DEV.bat
+		Utilities\CopySite\CopySite FROM DEV.txt = Utilities\CopySite\CopySite FROM DEV.txt
+		Utilities\CopySite\CopySite PROD.bat = Utilities\CopySite\CopySite PROD.bat
+		Utilities\CopySite\CopySite PROD.txt = Utilities\CopySite\CopySite PROD.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataProvider", "DataProvider", "{F25BDDB8-D549-48E5-8EF2-20368DAF405B}"
