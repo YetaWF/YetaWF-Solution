@@ -55,3 +55,8 @@ Website/Web.Generic.config
 Website/Website.Generic.csproj
 Website/Website.Generic.csproj_MVC5
 YetaWF.Generic.sln
+
+Website/bower_components
+Website/node_modules
+Website/package-lock.json
+
