@@ -110,10 +110,11 @@
   <ItemGroup>
     <Content Include="AddOns\Web.config" />
     <Content Include="Data\Appsettings.json" />
+    <Content Include="Data\Appsettings.Prod.json" />
     <Content Include="Data\MimeSettings.json" />
     <Content Include="Data\LanguageSettings.json" />
     <Content Include="Data\Web.config" />
-    <Content Include="gulpfile.js" />
+    <None Include="gulpfile.js" />
     <Content Include="logo.jpg" />
     <Content Include="Maintenance\Offline For Maintenance.html" />
     <Content Include="Maintenance\Offline.html" />
@@ -122,8 +123,8 @@
     <Content Include="Maintenance\StartupPage6.html" />
     <Content Include="Maintenance\Unsupported Browser.html" />
     <Content Include="AddonsCustom\Web.config" />
-    <Content Include="bower.json" />
-    <Content Include="package.json" />
+    <None Include="bower.json" />
+    <None Include="package.json" />
     <None Include="packages.config" />
     <Content Include="Maintenance\UpdateIndicator.txt" />
     <Content Include="Global.asax" />
@@ -135,11 +136,13 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Vault\Web.config" />
-    <Content Include="tsconfig.json" />
-    <Content Include="tslint.json" />
+    <None Include="tsconfig.json" />
+    <None Include="tslint.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="SiteFiles\" />
+    <Folder Include="Sites\" />
+    <Folder Include="Vault\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CoreComponents\Core\Core.csproj">
