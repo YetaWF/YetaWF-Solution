@@ -12,7 +12,7 @@ gulp.task('default', function () {
 
 var runSequence = require('run-sequence');
 gulp.task('DebugBuild', () => {
-    runSequence(['sass', 'less'] ,'ts');
+    runSequence(['sass', 'less'], 'ts');
 });
 gulp.task('ReleaseBuild', () => {
     runSequence(['sass', 'less', 'less-global'], ['ts', 'tslint'], ["minify-js", "minify-css", "minify-globals-css"]);
@@ -40,7 +40,7 @@ gulp.task('ts', () => {
         .pipe(gulp.dest(function (file) {
             return file.base;
         }));
-    }
+}
 );
 
 /* TypeScript Lint */
@@ -94,7 +94,7 @@ gulp.task('less', () =>
             //"!AddOns/YetaWF/Core/_JS",
             "!**/*.min.less",
             "!**/*.pack.less"
-    ], { follow: true })
+        ], { follow: true })
         .pipe(print())
         .pipe(less())
         .pipe(ext_replace(".css"))
@@ -109,7 +109,7 @@ gulp.task('less-global', () =>
             "Content/bootstrap/theme.less",
             "!**/*.min.less",
             "!**/*.pack.less"
-    ], { follow: true })
+        ], { follow: true })
         .pipe(print())
         .pipe(less())
         .pipe(ext_replace(".css"))

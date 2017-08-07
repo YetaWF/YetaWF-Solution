@@ -3,11 +3,12 @@ Disallow: /Addons/
 Disallow: /AddonsCustom/
 Disallow: /Areas/
 Disallow: /bin/
-Disallow: /Content/
+Disallow: /bower_components/
 Disallow: /Data/
+Disallow: /lib/
 Disallow: /Maintenance/
+Disallow: /node_modules/
 Disallow: /Properties/
 Disallow: /obj/
-Disallow: /Scripts/
 Disallow: /Sites/
 Disallow: /SiteTemplates/

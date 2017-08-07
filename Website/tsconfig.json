@@ -16,7 +16,7 @@
     "allowUnusedLabels": false,
     "alwaysStrict": false,
     "jsxFactory": "YetaWF_Basics.createElement",
-    "types": [ "jquery", "jqueryui", "kendo-ui", "YetaWFCore", "YetaWF" ]
+    "types": [ "jquery", "jqueryui", "kendo-ui", "YetaWFCore" ]
   },
   "compileOnSave": true,
   "typeAcquisition": { "enable": false },
