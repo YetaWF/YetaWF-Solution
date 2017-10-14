@@ -141,8 +141,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="SiteFiles\" />
-    <Folder Include="Sites\" />
-    <Folder Include="Vault\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CoreComponents\Core\Core.csproj">
@@ -184,10 +182,6 @@
     <ProjectReference Include="..\Modules\YetaWF\Basics\Basics.csproj">
       <Project>{A37EAA28-3B4D-4865-8170-830C2A4A97CC}</Project>
       <Name>Basics</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Modules\YetaWF\Blog\Blog.csproj">
-      <Project>{CB2DE6AC-AD35-4CF1-B77C-72B4AAF4E9A6}</Project>
-      <Name>Blog</Name>
     </ProjectReference>
     <ProjectReference Include="..\Modules\YetaWF\BootstrapCarousel\BootstrapCarousel.csproj">
       <Project>{F5ECEE0B-353E-4FDC-8F62-6CD387355221}</Project>
