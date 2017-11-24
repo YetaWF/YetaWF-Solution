@@ -6,12 +6,6 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Website", "Website\Website.csproj", "{A3B319C1-9328-4C4B-8A52-510F09317809}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CopySite", "CopySite", "{B5F2C94C-C522-4617-8EB6-9F0D485CC1C9}"
-	ProjectSection(SolutionItems) = preProject
-		Utilities\CopySite\CopySite FROM DEV.bat = Utilities\CopySite\CopySite FROM DEV.bat
-		Utilities\CopySite\CopySite FROM DEV.txt = Utilities\CopySite\CopySite FROM DEV.txt
-		Utilities\CopySite\CopySite PROD.bat = Utilities\CopySite\CopySite TO PROD.bat
-		Utilities\CopySite\CopySite PROD.txt = Utilities\CopySite\CopySite TO PROD.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataProvider", "DataProvider", "{F25BDDB8-D549-48E5-8EF2-20368DAF405B}"
 EndProject
@@ -116,6 +110,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CssHttpHandler", "CoreComponents\CssHttpHandler\CssHttpHandler.csproj", "{7881D87A-C00C-4765-BABB-4D76F558693E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageHttpHandler", "CoreComponents\ImageHttpHandler\ImageHttpHandler.csproj", "{D07F04A5-A3DF-42BB-9CD9-7719BB765A94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TawkTo", "Modules\YetaWF\TawkTo\TawkTo.csproj", "{F511D9E0-9EA6-430B-9CBA-908775DBC3F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Panels", "Modules\YetaWF\Panels\Panels.csproj", "{50E1D62C-4532-4C1D-BDE4-50CD7E0F9BC9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -311,6 +309,14 @@ Global
 		{D07F04A5-A3DF-42BB-9CD9-7719BB765A94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D07F04A5-A3DF-42BB-9CD9-7719BB765A94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D07F04A5-A3DF-42BB-9CD9-7719BB765A94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F511D9E0-9EA6-430B-9CBA-908775DBC3F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F511D9E0-9EA6-430B-9CBA-908775DBC3F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F511D9E0-9EA6-430B-9CBA-908775DBC3F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F511D9E0-9EA6-430B-9CBA-908775DBC3F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50E1D62C-4532-4C1D-BDE4-50CD7E0F9BC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50E1D62C-4532-4C1D-BDE4-50CD7E0F9BC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50E1D62C-4532-4C1D-BDE4-50CD7E0F9BC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50E1D62C-4532-4C1D-BDE4-50CD7E0F9BC9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -364,6 +370,8 @@ Global
 		{71ACC7AC-2622-4127-B925-D058C01A39E5} = {DD29F439-3F33-4B7E-AD95-DF6B54430782}
 		{7881D87A-C00C-4765-BABB-4D76F558693E} = {DD29F439-3F33-4B7E-AD95-DF6B54430782}
 		{D07F04A5-A3DF-42BB-9CD9-7719BB765A94} = {DD29F439-3F33-4B7E-AD95-DF6B54430782}
+		{F511D9E0-9EA6-430B-9CBA-908775DBC3F9} = {A6B92883-EBFB-4DFE-9817-52EC7E1EDB0C}
+		{50E1D62C-4532-4C1D-BDE4-50CD7E0F9BC9} = {A6B92883-EBFB-4DFE-9817-52EC7E1EDB0C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DAE1FE41-2A28-4586-8E87-957795F61EB2}

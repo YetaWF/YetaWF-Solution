@@ -269,6 +269,10 @@
       <Project>{ABD7D692-A3D1-4175-A88B-A4B9EE97F61D}</Project>
       <Name>Pages</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\Panels\Panels.csproj">
+      <Project>{50e1d62c-4532-4c1d-bde4-50cd7e0f9bc9}</Project>
+      <Name>Panels</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Modules\YetaWF\Scheduler\Scheduler.csproj">
       <Project>{343FCD1D-7B74-4B71-BB1A-A4370F482B23}</Project>
       <Name>Scheduler</Name>
@@ -296,6 +300,10 @@
     <ProjectReference Include="..\Modules\YetaWF\SyntaxHighlighter\SyntaxHighlighter.csproj">
       <Project>{6BA26781-9DCB-4487-844E-80F46F4A713F}</Project>
       <Name>SyntaxHighlighter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\TawkTo\TawkTo.csproj">
+      <Project>{f511d9e0-9ea6-430b-9cba-908775dbc3f9}</Project>
+      <Name>TawkTo</Name>
     </ProjectReference>
     <ProjectReference Include="..\Modules\YetaWF\Text\Text.csproj">
       <Project>{57B84B67-DA40-41B3-8C37-B544F3730C25}</Project>

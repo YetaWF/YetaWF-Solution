@@ -1,8 +1,10 @@
 ﻿/* Copyright © 2017 Softel vdm, Inc. - https://yetawf.com/Documentation/YetaWF/Licensing */
 
 using System;
+using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
+using System.Linq;
 using System.Web;
 using YetaWF.Core;
 using YetaWF.Core.Extensions;
@@ -20,6 +22,7 @@ namespace YetaWF {
 
         public MvcApplication() {
             AcquireRequestState += new EventHandler(MvcApplication_AcquireRequestState);
+            EndRequest += MvcApplication_EndRequest;
             Error += MvcApplication_Error;
 
             YetaWFManager.RootFolder = YetaWFManager.UrlToPhysical("/").TrimEnd(new char[] { '\\' });
@@ -38,6 +41,26 @@ namespace YetaWF {
             // __RequestVerificationToken hidden input field. Only the cookie is renamed. There is no need to
             // rename the input field.
             System.Web.Helpers.AntiForgeryConfig.CookieName = "__ReqVerToken_" + siteDomain;
+        }
+
+        private void MvcApplication_EndRequest(object sender, EventArgs e) {
+            // Clear all cookies for static requests
+            if (YetaWFManager.HaveManager) {
+                if (YetaWFManager.Manager.IsStaticSite) {
+                    HttpContext context = HttpContext.Current;
+                    List<string> cookiesToClear = new List<string>();
+                    foreach (string name in context.Request.Cookies) cookiesToClear.Add(name);
+                    foreach (string name in cookiesToClear) {
+                        HttpCookie cookie = new HttpCookie(name, string.Empty);
+                        cookie.Domain = YetaWFManager.Manager.CurrentSite.StaticDomain;
+                        cookie.Expires = DateTime.Today.AddYears(-1);
+                        context.Response.Cookies.Set(cookie);
+                    }
+                    // this cookie is added by filehndlr.image
+                    if (context.Response.Cookies["ASP.NET_SessionId"] != null)
+                        context.Response.Cookies.Remove("ASP.NET_SessionId");
+                }
+            }
         }
 
         void MvcApplication_Error(object sender, EventArgs e) {
@@ -71,41 +94,49 @@ namespace YetaWF {
             // Determine which Site folder to use based on URL provided
             bool forcedHost;
             bool newSwitch;
+            bool staticHost = false;
             string host = YetaWFManager.GetRequestedDomain(uri, httpReq.QueryString[Globals.Link_ForceSite], out forcedHost, out newSwitch);
             string host2 = null;
 
-            // check if such a site definition exists (accounting for www. or other subdomain)
-            string[] domParts = host.Split(new char[] { '.' });
-            if (domParts.Length > 2) {
-                if (domParts.Length > 3 || domParts[0] != "www")
-                    host2 = host;
-                host = string.Join(".", domParts, domParts.Length - 2, 2);// get just domain as a fallback
-            }
             SiteDefinition site = null;
-            if (!string.IsNullOrWhiteSpace(host2)) {
-                site = SiteDefinition.LoadSiteDefinition(host2);
-                if (site != null)
-                    host = host2;
-            }
-            if (site == null) {
-                site = SiteDefinition.LoadSiteDefinition(host);
+
+            site = SiteDefinition.LoadStaticSiteDefinition(uri.Host);
+            if (site != null) {
+                if (forcedHost || newSwitch) throw new InternalError("Static item for forced or new host");
+                staticHost = true;
+            } else {
+                // check if such a site definition exists (accounting for www. or other subdomain)
+                string[] domParts = host.Split(new char[] { '.' });
+                if (domParts.Length > 2) {
+                    if (domParts.Length > 3 || domParts[0] != "www")
+                        host2 = host;
+                    host = string.Join(".", domParts, domParts.Length - 2, 2);// get just domain as a fallback
+                }
+                if (!string.IsNullOrWhiteSpace(host2)) {
+                    site = SiteDefinition.LoadSiteDefinition(host2);
+                    if (site != null)
+                        host = host2;
+                }
                 if (site == null) {
-                    if (forcedHost) { // non-existent site requested
-                        HttpContext.Current.Response.Status = Logging.AddErrorLog("404 Not Found");
-                        HttpContext.Current.ApplicationInstance.CompleteRequest();
-                        return;
-                    }
-                    site = SiteDefinition.LoadSiteDefinition(null);
+                    site = SiteDefinition.LoadSiteDefinition(host);
                     if (site == null) {
-                        if (SiteDefinition.INITIAL_INSTALL) {
-                            // use a skeleton site for initial install
-                            // this will be updated when the model is installed
-                            site = new SiteDefinition {
-                                Identity = SiteDefinition.SiteIdentitySeed,
-                                SiteDomain = host,
-                            };
-                        } else {
-                            throw new InternalError("Couldn't obtain a SiteDefinition object");
+                        if (forcedHost) { // non-existent site requested
+                            HttpContext.Current.Response.Status = Logging.AddErrorLog("404 Not Found");
+                            HttpContext.Current.ApplicationInstance.CompleteRequest();
+                            return;
+                        }
+                        site = SiteDefinition.LoadSiteDefinition(null);
+                        if (site == null) {
+                            if (SiteDefinition.INITIAL_INSTALL) {
+                                // use a skeleton site for initial install
+                                // this will be updated when the model is installed
+                                site = new SiteDefinition {
+                                    Identity = SiteDefinition.SiteIdentitySeed,
+                                    SiteDomain = host,
+                                };
+                            } else {
+                                throw new InternalError("Couldn't obtain a SiteDefinition object");
+                            }
                         }
                     }
                 }
@@ -117,6 +148,7 @@ namespace YetaWF {
             // Site properties are ONLY valid AFTER this call to YetaWFManager.MakeInstance
 
             manager.CurrentSite = site;
+            manager.IsStaticSite = staticHost;
 
             manager.HostUsed = uri.Host;
             manager.HostPortUsed = uri.Port;
@@ -146,7 +178,7 @@ namespace YetaWF {
             }
 
             // Make sure we're using the "official" URL, otherwise redirect 301
-            if (site.EnforceSiteUrl) {
+            if (!staticHost && site.EnforceSiteUrl) {
                 if (uri.IsAbsoluteUri) {
                     if (!manager.IsLocalHost && !forcedHost && string.Compare(manager.HostUsed, site.SiteDomain, true) != 0) {
                         UriBuilder newUrl = new UriBuilder(uri);
