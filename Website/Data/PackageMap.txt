@@ -13,7 +13,7 @@ YetaWF.Dashboard 2.8.0
 YetaWF.DataProvider.File 2.8.0
 YetaWF.DataProvider.Localization 2.8.0
 YetaWF.DataProvider.ModuleDefinition 2.8.0
-YetaWF.DataProvider.SQL2 2.8.0
+YetaWF.DataProvider.SQL 2.8.0
 YetaWF.DefaultSkin 2.8.0
 YetaWF.DevTests 2.8.0
 YetaWF.Feed 2.8.0
