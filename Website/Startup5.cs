@@ -1,7 +1,8 @@
-﻿/* Copyright © 2017 Softel vdm, Inc. - https://yetawf.com/Documentation/YetaWF/Licensing */
+﻿/* Copyright © 2018 Softel vdm, Inc. - https://yetawf.com/Documentation/YetaWF/Licensing */
 
 using System.Web.Mvc;
 using System.Web.Routing;
+using YetaWF.Core.DataProvider;
 using YetaWF.Core.Log;
 using YetaWF.Core.Packages;
 using YetaWF.Core.Site;
@@ -36,6 +37,8 @@ namespace YetaWF.App_Start {
                 new string[] { "YetaWF.Core.Controllers", } // namespace
             );
 
+            // External data providers
+            ExternalDataProviders.RegisterExternalDataProviders();
             // Call all classes that expose the interface IInitializeApplicationStartup
             YetaWF.Core.Support.Startup.CallStartupClasses();
 

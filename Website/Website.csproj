@@ -26,6 +26,7 @@
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
     <UseGlobalApplicationHostFile />
     <TargetFrameworkProfile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -116,6 +117,7 @@
     <Content Include="Data\Web.config" />
     <None Include="gulpfile.js" />
     <Content Include="logo.jpg" />
+    <Content Include="Maintenance\_hc.html" />
     <Content Include="Maintenance\Offline For Maintenance.html" />
     <Content Include="Maintenance\Offline.html" />
     <Content Include="Maintenance\StartupDone.html" />
@@ -141,8 +143,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="SiteFiles\" />
-    <Folder Include="Sites\" />
-    <Folder Include="Vault\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CoreComponents\Core\Core.csproj">
@@ -278,7 +278,7 @@
       <Name>Scheduler</Name>
     </ProjectReference>
     <ProjectReference Include="..\Modules\YetaWF\Search\Search.csproj">
-      <Project>{8D2B0F98-869F-43ED-AE36-A61F54AF8E2A}</Project>
+      <Project>{8d2b0f98-869f-43ed-ae36-a61f54af8e2a}</Project>
       <Name>Search</Name>
     </ProjectReference>
     <ProjectReference Include="..\Modules\YetaWF\Security\Security.csproj">
@@ -336,6 +336,10 @@
     <ProjectReference Include="..\Skins\YetaWF\BusinessCasualSkin\BusinessCasualSkin.csproj">
       <Project>{DF925936-E1E3-4421-B003-0787F2CA0249}</Project>
       <Name>BusinessCasualSkin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Skins\YetaWF\DefaultSkin\DefaultSkin.csproj">
+      <Project>{6de84c3a-4a83-4e13-9beb-48933bf5cebc}</Project>
+      <Name>DefaultSkin</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

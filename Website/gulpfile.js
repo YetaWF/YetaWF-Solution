@@ -1,14 +1,12 @@
-﻿/* Copyright © 2017 Softel vdm, Inc. - https://yetawf.com/Documentation/YetaWF/Licensing */
+﻿/* Copyright © 2018 Softel vdm, Inc. - https://yetawf.com/Documentation/YetaWF/Licensing */
+
+// If you get a message like "node sass could not find a binding for your current environment: windows 64-bit with node.js 4.x"
+// when running sass, use "npm rebuild node-sass".
 
 var gulp = require('gulp');
 var print = require('gulp-print');
 var ext_replace = require('gulp-ext-replace');
 var lec = require('gulp-line-ending-corrector');
-
-
-gulp.task('default', function () {
-    // place code for your default task here
-});
 
 var runSequence = require('run-sequence');
 gulp.task('DebugBuild', () => {
@@ -21,9 +19,7 @@ gulp.task('ReleaseBuild', () => {
 /* TypeScript Compile */
 var ts = require('gulp-typescript');
 var sourcemaps = require('gulp-sourcemaps');
-gulp.task('ts', () => {
-    var tsProject = ts.createProject('tsconfig.json');
-    gulp.src([
+var tsFolders = [
             "**/*.ts",
             "**/*.tsx",
             "!**/*.d.ts",
@@ -31,7 +27,10 @@ gulp.task('ts', () => {
             "!node_modules",
             "!AddOns/YetaWF/Core/_JS/**",
             "!AddOns/YetaWF/Core/_JS"
-        ], { follow: true })
+];
+gulp.task('ts', () => {
+    var tsProject = ts.createProject('tsconfig.json');
+    gulp.src(tsFolders, { follow: true })
         .pipe(print())
         .pipe(sourcemaps.init())
         .pipe(tsProject())
@@ -46,15 +45,7 @@ gulp.task('ts', () => {
 /* TypeScript Lint */
 var tslint = require("gulp-tslint");
 gulp.task("tslint", () =>
-    gulp.src([
-            "**/*.ts",
-            "**/*.tsx",
-            "!**/*.d.ts",
-            "!node_modules/**",
-            "!node_modules",
-            "!AddOns/YetaWF/Core/_JS/**",
-            "!AddOns/YetaWF/Core/_JS"
-        ], { follow: true })
+    gulp.src(tsFolders, { follow: true })
         .pipe(print())
         .pipe(tslint({
             formatter: "msbuild",
@@ -67,13 +58,14 @@ gulp.task("tslint", () =>
 
 /* Scss Compile */
 var sass = require('gulp-sass');
-gulp.task('sass', () =>
-    gulp.src([
+var sassFolders = [
             "AddOns/**/*.scss",
             "Vault/**/*.scss",
             "!AddOns/YetaWF/Core/_JS/**",
             "!AddOns/YetaWF/Core/_JS"
-        ], { follow: true })
+];
+gulp.task('sass', () =>
+    gulp.src(sassFolders, { follow: true })
         .pipe(print())
         .pipe(sass())
         .pipe(ext_replace('.css'))
@@ -86,15 +78,16 @@ gulp.task('sass', () =>
 
 /* Less Compile */
 var less = require('gulp-less');
-gulp.task('less', () =>
-    gulp.src([
+var lessFolders = [
             "AddOns/**/*.less",
             "Vault/**/*.less",
             //"!AddOns/YetaWF/Core/_JS/**",
             //"!AddOns/YetaWF/Core/_JS",
             "!**/*.min.less",
             "!**/*.pack.less"
-        ], { follow: true })
+];
+gulp.task('less', () =>
+    gulp.src(lessFolders, { follow: true })
         .pipe(print())
         .pipe(less())
         .pipe(ext_replace(".css"))
@@ -103,6 +96,8 @@ gulp.task('less', () =>
             return file.base;
         }))
 );
+
+
 gulp.task('less-global', () =>
     gulp.src([
             "Content/bootstrap/bootstrap.less",
@@ -204,5 +199,11 @@ gulp.task('minify-globals-css', () =>
             return file.base;
         }))
 );
+
+gulp.task('watch', function () {
+    gulp.watch(tsFolders, ['ts']);
+    gulp.watch(sassFolders, ['sass']);
+    gulp.watch(lessFolders, ['less']);
+});
 
 

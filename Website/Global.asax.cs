@@ -1,10 +1,9 @@
-﻿/* Copyright © 2017 Softel vdm, Inc. - https://yetawf.com/Documentation/YetaWF/Licensing */
+﻿/* Copyright © 2018 Softel vdm, Inc. - https://yetawf.com/Documentation/YetaWF/Licensing */
 
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
-using System.Linq;
 using System.Web;
 using YetaWF.Core;
 using YetaWF.Core.Extensions;
@@ -183,6 +182,13 @@ namespace YetaWF {
                     if (!manager.IsLocalHost && !forcedHost && string.Compare(manager.HostUsed, site.SiteDomain, true) != 0) {
                         UriBuilder newUrl = new UriBuilder(uri);
                         newUrl.Host = site.SiteDomain;
+                        if (site.EnforceSitePort) {
+                            if (newUrl.Scheme == "https") {
+                                newUrl.Port = site.PortNumberSSLEval;
+                            } else {
+                                newUrl.Port = site.PortNumberEval;
+                            }
+                        }
                         HttpContext.Current.Response.Status = Logging.AddLog("301 Moved Permanently - {0}", newUrl.ToString()).Truncate(100);
                         HttpContext.Current.Response.AddHeader("Location", newUrl.ToString());
                         HttpContext.Current.ApplicationInstance.CompleteRequest();
