@@ -11,44 +11,57 @@ using YetaWF.Core.Support;
 [assembly: WebActivatorEx.PostApplicationStartMethod(typeof(YetaWF.App_Start.Startup), "Start")]
 
 namespace YetaWF.App_Start {
+
     public class Startup {
 
         public static void Start() {
 
             YetaWFManager manager = YetaWFManager.MakeInstance("__STARTUP"); // while loading packages we need a manager
-            manager.CurrentSite = new SiteDefinition();
 
-            Logging.SetupLogging();
-            Logging.AddLog("YetaWF.App_Start.Startup starting");
+            YetaWFManager.Syncify(async () => { // Startup, so async is pointless
 
-            RouteTable.Routes.IgnoreRoute("File.image/{*pathInfo}");
-            RouteTable.Routes.IgnoreRoute("FileHndlr.image/{*pathInfo}");
+                manager.CurrentSite = new SiteDefinition();
 
-            Logging.AddLog("Calling AreaRegistration.RegisterAllAreas()");
-            AreaRegistration.RegisterAllAreas();
-            Logging.AddLog("Adding filters");
-            //GlobalFilters.Filters.Add(new HandleErrorAttribute());
+                // Create an startup log file
+                StartupLogging startupLog = new StartupLogging();
+                Logging.RegisterLogging(startupLog);
 
-            Logging.AddLog("Adding catchall route");
-            RouteTable.Routes.MapRoute(
-                "Page",
-                "{*__path}",
-                new { controller = "Page", action = "Show" },
-                new string[] { "YetaWF.Core.Controllers", } // namespace
-            );
+                Logging.AddLog("YetaWF.App_Start.Startup starting");
 
-            // External data providers
-            ExternalDataProviders.RegisterExternalDataProviders();
-            // Call all classes that expose the interface IInitializeApplicationStartup
-            YetaWF.Core.Support.Startup.CallStartupClasses();
+                RouteTable.Routes.IgnoreRoute("FileHndlr.image/{*pathInfo}");
 
-            // Find all the views/areas that are available to the website (i.e., core + modules)
-            ViewEnginesStartup.Start();
+                Logging.AddLog("Calling AreaRegistration.RegisterAllAreas()");
+                AreaRegistration.RegisterAllAreas();
+                Logging.AddLog("Adding filters");
+                //GlobalFilters.Filters.Add(new HandleErrorAttribute());
 
-            Package.UpgradeToNewPackages();
+                Logging.AddLog("Adding catchall route");
+                RouteTable.Routes.MapRoute(
+                    "Page",
+                    "{*__path}",
+                    new { controller = "Page", action = "Show" },
+                    new string[] { "YetaWF.Core.Controllers", } // namespace
+                );
 
-            YetaWF.Core.Support.Startup.Started = true;
-            Logging.AddLog("YetaWF.App_Start.Startup completed");
+                // Find all the views/areas that are available to the website (i.e., core + modules)
+                ViewEnginesStartup.Start();
+
+                // External data providers
+                ExternalDataProviders.RegisterExternalDataProviders();
+                // Call all classes that expose the interface IInitializeApplicationStartup
+                await YetaWF.Core.Support.Startup.CallStartupClassesAsync();
+
+                // Stop startup log file
+                Logging.UnregisterLogging(startupLog);
+
+                await Logging.SetupLoggingAsync();
+
+                if (!YetaWF.Core.Support.Startup.MultiInstance)
+                    await Package.UpgradeToNewPackagesAsync();
+
+                YetaWF.Core.Support.Startup.Started = true;
+                Logging.AddLog("YetaWF.App_Start.Startup completed");
+            });
         }
     }
 }

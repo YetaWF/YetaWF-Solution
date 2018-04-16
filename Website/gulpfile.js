@@ -10,7 +10,7 @@ var lec = require('gulp-line-ending-corrector');
 
 var runSequence = require('run-sequence');
 gulp.task('DebugBuild', () => {
-    runSequence(['sass', 'less'], 'ts');
+    runSequence(['sass', 'less'] ,'ts');
 });
 gulp.task('ReleaseBuild', () => {
     runSequence(['sass', 'less', 'less-global'], ['ts', 'tslint'], ["minify-js", "minify-css", "minify-globals-css"]);
@@ -20,13 +20,13 @@ gulp.task('ReleaseBuild', () => {
 var ts = require('gulp-typescript');
 var sourcemaps = require('gulp-sourcemaps');
 var tsFolders = [
-            "**/*.ts",
-            "**/*.tsx",
-            "!**/*.d.ts",
-            "!node_modules/**",
-            "!node_modules",
-            "!AddOns/YetaWF/Core/_JS/**",
-            "!AddOns/YetaWF/Core/_JS"
+    "**/*.ts",
+    "**/*.tsx",
+    "!**/*.d.ts",
+    "!node_modules/**",
+    "!node_modules",
+    "!AddOns/YetaWF/Core/_JS/**",
+    "!AddOns/YetaWF/Core/_JS"
 ];
 gulp.task('ts', () => {
     var tsProject = ts.createProject('tsconfig.json');
@@ -39,7 +39,7 @@ gulp.task('ts', () => {
         .pipe(gulp.dest(function (file) {
             return file.base;
         }));
-}
+    }
 );
 
 /* TypeScript Lint */
@@ -59,10 +59,10 @@ gulp.task("tslint", () =>
 /* Scss Compile */
 var sass = require('gulp-sass');
 var sassFolders = [
-            "AddOns/**/*.scss",
-            "Vault/**/*.scss",
-            "!AddOns/YetaWF/Core/_JS/**",
-            "!AddOns/YetaWF/Core/_JS"
+    "AddOns/**/*.scss",
+    "Vault/**/*.scss",
+    "!AddOns/YetaWF/Core/_JS/**",
+    "!AddOns/YetaWF/Core/_JS"
 ];
 gulp.task('sass', () =>
     gulp.src(sassFolders, { follow: true })
@@ -79,12 +79,12 @@ gulp.task('sass', () =>
 /* Less Compile */
 var less = require('gulp-less');
 var lessFolders = [
-            "AddOns/**/*.less",
-            "Vault/**/*.less",
-            //"!AddOns/YetaWF/Core/_JS/**",
-            //"!AddOns/YetaWF/Core/_JS",
-            "!**/*.min.less",
-            "!**/*.pack.less"
+    "AddOns/**/*.less",
+    "Vault/**/*.less",
+    //"!AddOns/YetaWF/Core/_JS/**",
+    //"!AddOns/YetaWF/Core/_JS",
+    "!**/*.min.less",
+    "!**/*.pack.less"
 ];
 gulp.task('less', () =>
     gulp.src(lessFolders, { follow: true })
@@ -104,7 +104,7 @@ gulp.task('less-global', () =>
             "Content/bootstrap/theme.less",
             "!**/*.min.less",
             "!**/*.pack.less"
-        ], { follow: true })
+    ], { follow: true })
         .pipe(print())
         .pipe(less())
         .pipe(ext_replace(".css"))

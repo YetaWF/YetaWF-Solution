@@ -64,27 +64,27 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web" />
@@ -157,10 +157,6 @@
       <Project>{D07F04A5-A3DF-42BB-9CD9-7719BB765A94}</Project>
       <Name>ImageHttpHandler</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataProvider\File\File.csproj">
-      <Project>{F0DF6C3B-2B71-4526-8FD0-AC2B731B2C3B}</Project>
-      <Name>File</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DataProvider\Localization\Localization.csproj">
       <Project>{95824F1C-E1A5-42D3-915A-D55F10882743}</Project>
       <Name>Localization</Name>
@@ -168,10 +164,6 @@
     <ProjectReference Include="..\DataProvider\ModuleDefinition\ModuleDefinition.csproj">
       <Project>{348F2A6B-57F5-47A3-8A46-3F44529ACD83}</Project>
       <Name>ModuleDefinition</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DataProvider\SQL\SQL.csproj">
-      <Project>{22F3EC05-EC47-42B9-87CC-FF4D5494F8A4}</Project>
-      <Name>SQL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Modules\YetaWF\AddThis\AddThis.csproj">
       <Project>{9D25CE01-007F-458C-991F-8BF07C5C97F9}</Project>
@@ -192,6 +184,10 @@
     <ProjectReference Include="..\Modules\YetaWF\BootstrapCarousel\BootstrapCarousel.csproj">
       <Project>{F5ECEE0B-353E-4FDC-8F62-6CD387355221}</Project>
       <Name>BootstrapCarousel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\Caching\Caching.csproj">
+      <Project>{e0109f2e-764d-4173-bd8b-b690bff87648}</Project>
+      <Name>Caching</Name>
     </ProjectReference>
     <ProjectReference Include="..\Modules\YetaWF\CurrencyConverter\CurrencyConverter.csproj">
       <Project>{C2EED268-B63B-4A74-927E-FE4C13ADB3C5}</Project>
