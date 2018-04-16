@@ -22,7 +22,7 @@ namespace YetaWF.App_Start {
 
                 manager.CurrentSite = new SiteDefinition();
 
-                // Create an startup log file
+                // Create a startup log file
                 StartupLogging startupLog = new StartupLogging();
                 Logging.RegisterLogging(startupLog);
 
