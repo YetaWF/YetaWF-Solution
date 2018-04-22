@@ -24,7 +24,7 @@ namespace YetaWF.App_Start {
 
                 // Create a startup log file
                 StartupLogging startupLog = new StartupLogging();
-                Logging.RegisterLogging(startupLog);
+                await Logging.RegisterLoggingAsync(startupLog);
 
                 Logging.AddLog("YetaWF.App_Start.Startup starting");
 

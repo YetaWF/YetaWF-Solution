@@ -21,7 +21,7 @@
     "@types/kendo-ui": "^2017.3.4",
     "bootstrap": "^3.3.7",
     "bootswatch": "^3.3.7",
-    "ckeditor": "^4.9.1",
+    "ckeditor": "^4.9.2",
     "clipboard": "^1.7.1",
     "free-jqgrid": "^4.15.4",
     "gulp": "^3.9.1",
@@ -49,7 +49,7 @@
     "smartmenus": "^1.1.0",
     "swfobject-npm": "^2.3.0",
     "tslint": "^5.9.1",
-    "typescript": "^2.8.1",
+    "typescript": "^2.8.3",
     "ui-contextmenu": "^1.18.1",
     "urijs": "^1.19.1"
   },
