@@ -42,7 +42,7 @@
     "jquery-validation": "^1.17.0",
     "jquery-validation-unobtrusive": "^3.2.9",
     "jstree": "^3.3.5",
-    "node-sass": "^4.8.3",
+    "node-sass": "^4.9.0",
     "normalize-css": "^2.3.1",
     "run-sequence": "^2.2.1",
     "signalr": "^2.2.3",
