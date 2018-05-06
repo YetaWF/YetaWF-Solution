@@ -13,7 +13,7 @@ gulp.task('DebugBuild', () => {
     runSequence(['sass', 'less'] ,'ts');
 });
 gulp.task('ReleaseBuild', () => {
-    runSequence(['sass', 'less', 'less-global'], ['ts', 'tslint'], ["minify-js", "minify-css", "minify-globals-css"]);
+    runSequence(['sass', 'less'], ['ts', 'tslint'], ["minify-js", "minify-css", "minify-globals-css"]);
 });
 
 /* TypeScript Compile */
@@ -98,22 +98,6 @@ gulp.task('less', () =>
 );
 
 
-gulp.task('less-global', () =>
-    gulp.src([
-            "Content/bootstrap/bootstrap.less",
-            "Content/bootstrap/theme.less",
-            "!**/*.min.less",
-            "!**/*.pack.less"
-    ], { follow: true })
-        .pipe(print())
-        .pipe(less())
-        .pipe(ext_replace(".css"))
-        .pipe(lec({ eolc: 'CRLF' })) //OMG - We'll deal with it later...
-        .pipe(gulp.dest(function (file) {
-            return file.base;
-        }))
-);
-
 /* Javascript minify */
 var minify = require("gulp-minify");
 gulp.task('minify-js', () =>
@@ -155,7 +139,7 @@ gulp.task('minify-css', () =>
             "AddOnsCustom/**/*.css",
             "Vault/**/*.css",
             "node_modules/normalize-css/*.css",
-            "node_modules/smartmenus/dist/addons/bootstrap/*.css",
+            "node_modules/smartmenus/dist/addons/bootstrap-4/*.css",
             "!AddOns/YetaWF/Core/_JS/clipboardjs.com/**",
             "!AddOns/YetaWF/Core/_JS/clipboardjs.com",
             "!AddOns/YetaWF/Core/_JS/github.com.vadikom/**",
@@ -184,7 +168,6 @@ gulp.task('minify-css', () =>
 /* CSS Minify for global addons */
 gulp.task('minify-globals-css', () =>
     gulp.src(["AddOns/YetaWF/Core/_JS/**/*.css",
-            "Content/**/*.css",
             "!**/*.min.css",
             "!**/*.pack.css"
         ], { follow: true })
