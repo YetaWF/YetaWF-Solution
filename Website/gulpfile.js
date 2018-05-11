@@ -4,7 +4,7 @@
 // when running sass, use "npm rebuild node-sass".
 
 var gulp = require('gulp');
-var print = require('gulp-print');
+var print = require('gulp-print').default;
 var ext_replace = require('gulp-ext-replace');
 var lec = require('gulp-line-ending-corrector');
 
