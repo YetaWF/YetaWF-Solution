@@ -60,3 +60,4 @@ Website/bower_components
 Website/node_modules
 Website/package-lock.json
 
+Website/Data/StartupLogFile.txt

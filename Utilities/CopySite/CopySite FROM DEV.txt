@@ -1,4 +1,4 @@
-﻿ SQL Databases
+﻿# SQL Databases
 # Development system DBs (adjust as needed)
 DevDB yourDEVdatabasename,yourPRODdatabasename,sqlservername,username,password
 # additional DevDB statements if you have more DBs
