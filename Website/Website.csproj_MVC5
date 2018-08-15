@@ -132,7 +132,6 @@
     <Content Include="Maintenance\UpdateIndicator.txt" />
     <Content Include="Global.asax" />
     <Content Include="robots.txt" />
-
     <Content Include="SiteTemplates\Web.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Web.config">
@@ -223,10 +222,6 @@
       <Project>{D46C5A31-8CB6-43A9-BB45-5C515F7A4A38}</Project>
       <Name>ImageRepository</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Modules\YetaWF\KeepAlive\KeepAlive.csproj">
-      <Project>{77CFBA7F-37E4-40AD-AF80-A263A1A3E3AD}</Project>
-      <Name>KeepAlive</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Modules\YetaWF\Languages\Languages.csproj">
       <Project>{E6751E29-EEA1-4319-B050-38E1F2C7EC0D}</Project>
       <Name>Languages</Name>
@@ -290,10 +285,6 @@
     <ProjectReference Include="..\Modules\YetaWF\Sites\Sites.csproj">
       <Project>{18510085-652B-49E8-8EA8-52EAEB8F27DC}</Project>
       <Name>Sites</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Modules\YetaWF\SlideShow\SlideShow.csproj">
-      <Project>{D3A7A68B-9A97-4570-9F34-CD62BA041DAE}</Project>
-      <Name>SlideShow</Name>
     </ProjectReference>
     <ProjectReference Include="..\Modules\YetaWF\SyntaxHighlighter\SyntaxHighlighter.csproj">
       <Project>{6BA26781-9DCB-4487-844E-80F46F4A713F}</Project>
