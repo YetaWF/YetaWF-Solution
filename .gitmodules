@@ -10,3 +10,6 @@
 [submodule "Skins/YetaWF"]
 	path = Skins/YetaWF
 	url = https://github.com/YetaWF/YetaWF-Skins
+[submodule "Localization/en-US/YetaWF"]
+	path = Localization/en-US/YetaWF
+	url = https://github.com/YetaWF/Localization-YetaWF-Modules-en-US
