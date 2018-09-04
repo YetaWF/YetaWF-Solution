@@ -2,13 +2,10 @@
 
 using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.IO;
 using System.Web;
 using YetaWF.Core;
-using YetaWF.Core.Extensions;
 using YetaWF.Core.Log;
-using YetaWF.Core.Site;
 using YetaWF.Core.Support;
 
 #if DEBUG
@@ -40,6 +37,8 @@ namespace YetaWF {
             // __RequestVerificationToken hidden input field. Only the cookie is renamed. There is no need to
             // rename the input field.
             System.Web.Helpers.AntiForgeryConfig.CookieName = "__ReqVerToken_" + siteDomain;
+
+            System.Web.Helpers.AntiForgeryConfig.SuppressXFrameOptionsHeader = true;
         }
 
         private void MvcApplication_EndRequest(object sender, EventArgs e) {

@@ -10,10 +10,10 @@ var lec = require('gulp-line-ending-corrector');
 
 var runSequence = require('run-sequence');
 gulp.task('DebugBuild', () => {
-    runSequence(['sass', 'less'] ,'ts');
+    runSequence(['sass', 'less'] ,'ts', 'copydts');
 });
 gulp.task('ReleaseBuild', () => {
-    runSequence(['sass', 'less'], ['ts', 'tslint'], ["minify-js", "minify-css", "minify-globals-css"]);
+    runSequence(['sass', 'less'], ['ts', 'tslint'], 'copydts', ["minify-js", "minify-css"]);
 });
 
 /* TypeScript Compile */
@@ -24,9 +24,7 @@ var tsFolders = [
     "**/*.tsx",
     "!**/*.d.ts",
     "!node_modules/**",
-    "!node_modules",
-    "!AddOns/YetaWF/Core/_JS/**",
-    "!AddOns/YetaWF/Core/_JS"
+    "!node_modules"
 ];
 gulp.task('ts', () => {
     var tsProject = ts.createProject('tsconfig.json');
@@ -61,8 +59,6 @@ var sass = require('gulp-sass');
 var sassFolders = [
     "AddOns/**/*.scss",
     "Vault/**/*.scss",
-    "!AddOns/YetaWF/Core/_JS/**",
-    "!AddOns/YetaWF/Core/_JS"
 ];
 gulp.task('sass', () =>
     gulp.src(sassFolders, { follow: true })
@@ -81,8 +77,6 @@ var less = require('gulp-less');
 var lessFolders = [
     "AddOns/**/*.less",
     "Vault/**/*.less",
-    //"!AddOns/YetaWF/Core/_JS/**",
-    //"!AddOns/YetaWF/Core/_JS",
     "!**/*.min.less",
     "!**/*.pack.less"
 ];
@@ -105,16 +99,6 @@ gulp.task('minify-js', () =>
             "AddOnsCustom/**/*.js",
             "node_modules/jquery-validation-unobtrusive/*.js",
             "node_modules/urijs/src/*.js",
-            "!AddOns/YetaWF/Core/_JS/clipboardjs.com/**",
-            "!AddOns/YetaWF/Core/_JS/clipboardjs.com",
-            "!AddOns/YetaWF/Core/_JS/github.com.vadikom/**",
-            "!AddOns/YetaWF/Core/_JS/github.com.vadikom",
-            "!AddOns/YetaWF/Core/_JS/google.com.swfobject/**",
-            "!AddOns/YetaWF/Core/_JS/google.com.swfobject",
-            "!AddOns/YetaWF/Core/_JS/jqueryui.com/jqueryui-themes",
-            "!AddOns/YetaWF/Core/_JS/jqueryui.com/jqueryui-themes/**",
-            "!AddOns/YetaWF/Core/_JS/medialize.github.io/**",
-            "!AddOns/YetaWF/Core/_JS/medialize.github.io",
             "!**/*.min.js",
             "!**/*.pack.js"
         ], { follow: true })
@@ -140,16 +124,6 @@ gulp.task('minify-css', () =>
             "Vault/**/*.css",
             "node_modules/normalize-css/*.css",
             "node_modules/smartmenus/dist/addons/bootstrap-4/*.css",
-            "!AddOns/YetaWF/Core/_JS/clipboardjs.com/**",
-            "!AddOns/YetaWF/Core/_JS/clipboardjs.com",
-            "!AddOns/YetaWF/Core/_JS/github.com.vadikom/**",
-            "!AddOns/YetaWF/Core/_JS/github.com.vadikom",
-            "!AddOns/YetaWF/Core/_JS/google.com.swfobject/**",
-            "!AddOns/YetaWF/Core/_JS/google.com.swfobject",
-            "!AddOns/YetaWF/Core/_JS/jqueryui.com/jqueryui-themes",
-            "!AddOns/YetaWF/Core/_JS/jqueryui.com/jqueryui-themes/**",
-            "!AddOns/YetaWF/Core/_JS/medialize.github.io/**",
-            "!AddOns/YetaWF/Core/_JS/medialize.github.io",
             "!**/*.min.css",
             "!**/*.pack.css"
         ], { follow: true })
@@ -165,26 +139,25 @@ gulp.task('minify-css', () =>
         }))
 );
 
-/* CSS Minify for global addons */
-gulp.task('minify-globals-css', () =>
-    gulp.src(["AddOns/YetaWF/Core/_JS/**/*.css",
-            "!**/*.min.css",
-            "!**/*.pack.css"
-        ], { follow: true })
+/* Copy required *.d.ts files */
+var dtsFolders = [
+    "AddOns/YetaWF/Core/_Addons/Basics/*.d.ts",
+    "AddOns/YetaWF/Core/_Addons/Forms/*.d.ts",
+    "AddOns/YetaWF/Core/_Addons/Popups/*.d.ts",
+    "AddOns/YetaWF/ComponentsHTML/_Addons/Forms/*.d.ts",
+    "AddOns/YetaWF/ComponentsHTML/_Addons/Popups/*.d.ts",
+    "AddOns/YetaWF/ComponentsHTML/_Main/ComponentsHTML.d.ts",
+    "AddOns/YetaWF/ComponentsHTML/_Templates/**/*.d.ts",
+];
+gulp.task('copydts', function () {
+    gulp.src(dtsFolders, { follow: true })
         .pipe(print())
-        .pipe(cleanCSS({
-            compatibility: 'ie8',
-            inline: ['local'], // enables local inlining
-            rebase: false // don't change url()
-        }))
-        .pipe(ext_replace(".min.css"))
-        .pipe(gulp.dest(function (file) {
-            return file.base;
-        }))
-);
+        .pipe(gulp.dest('./node_modules/@types/YetaWF/HTML/'));
+});
 
 gulp.task('watch', function () {
     gulp.watch(tsFolders, ['ts']);
+    gulp.watch(dtsFolders, ['copydts']);
     gulp.watch(sassFolders, ['sass']);
     gulp.watch(lessFolders, ['less']);
 });
