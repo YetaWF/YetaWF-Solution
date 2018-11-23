@@ -129,14 +129,16 @@
     <Content Include="AddonsCustom\Web.config" />
     <Content Include="package.json" />
     <Content Include="Localization\Web.config" />
-    <Content Include="LocalizationCustom\Web.config" />
     <Content Include="bower_components\Web.config" />
     <Content Include="node_modules\Web.config" />
     <Content Include="bower.json" />
+    <Content Include="LocalizationCustom\Web.config" />
     <None Include="packages.config" />
     <Content Include="Maintenance\UpdateIndicator.txt" />
     <Content Include="Global.asax" />
     <Content Include="robots.txt" />
+    <Content Include="SiteTemplates\Data\Add Additional Site.txt" />
+    <Content Include="SiteTemplates\Data\Add Site.txt" />
     <Content Include="SiteTemplates\Web.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Web.config">

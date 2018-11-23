@@ -15,6 +15,8 @@
     <RootNamespace>YetaWF</RootNamespace>
     <AssemblyName>YetaWF</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews Condition="'$(Configuration)'=='Debug'">false</MvcBuildViews>
+    <MvcBuildViews Condition="'$(Configuration)'=='Release'">true</MvcBuildViews>
     <TypeScriptToolsVersion>2.8.3</TypeScriptToolsVersion>
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
     <UseIISExpress>true</UseIISExpress>
