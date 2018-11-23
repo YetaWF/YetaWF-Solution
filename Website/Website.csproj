@@ -15,8 +15,6 @@
     <RootNamespace>YetaWF</RootNamespace>
     <AssemblyName>YetaWF</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <MvcBuildViews Condition="'$(Configuration)'=='Debug'">false</MvcBuildViews>
-    <MvcBuildViews Condition="'$(Configuration)'=='Release'">true</MvcBuildViews>
     <TypeScriptToolsVersion>2.8.3</TypeScriptToolsVersion>
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
     <UseIISExpress>true</UseIISExpress>
@@ -58,6 +56,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
@@ -127,11 +126,17 @@
     <Content Include="Maintenance\Unsupported Browser.html" />
     <Content Include="AddonsCustom\Web.config" />
     <Content Include="package.json" />
+    <Content Include="Localization\Web.config" />
+    <Content Include="bower_components\Web.config" />
+    <Content Include="node_modules\Web.config" />
     <Content Include="bower.json" />
+    <Content Include="LocalizationCustom\Web.config" />
     <None Include="packages.config" />
     <Content Include="Maintenance\UpdateIndicator.txt" />
     <Content Include="Global.asax" />
     <Content Include="robots.txt" />
+    <Content Include="SiteTemplates\Data\Add Additional Site.txt" />
+    <Content Include="SiteTemplates\Data\Add Site.txt" />
     <Content Include="SiteTemplates\Web.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Web.config">
@@ -139,8 +144,8 @@
     </Content>
     <Content Include="Sites\Web.config" />
     <Content Include="Vault\Web.config" />
-    <None Include="tsconfig.json" />
-    <None Include="tslint.json" />
+    <Content Include="tsconfig.json" />
+    <Content Include="tslint.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="SiteFiles\" />

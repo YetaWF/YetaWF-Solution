@@ -60,17 +60,24 @@ var sassFolders = [
     "AddOns/**/*.scss",
     "Vault/**/*.scss",
 ];
-gulp.task('sass', () =>
+gulp.task('sass', () => {
+
+    var postcss = require('gulp-postcss');
+    //var sourcemaps = require('gulp-sourcemaps');
+    var autoprefixer = require('autoprefixer');
+
     gulp.src(sassFolders, { follow: true })
         .pipe(print())
-        .pipe(sass())
+        .pipe(sass({
+            includePaths: "node_modules",
+        }))
         .pipe(ext_replace('.css'))
         .pipe(lec({ eolc: 'CRLF' })) //OMG - We'll deal with it later...
+        .pipe(postcss([autoprefixer()]))
         .pipe(gulp.dest(function (file) {
             return file.base;
-        })
-    )
-);
+        }));
+});
 
 /* Less Compile */
 var less = require('gulp-less');
