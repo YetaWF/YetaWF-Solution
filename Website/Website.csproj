@@ -58,6 +58,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
@@ -127,11 +128,18 @@
     <Content Include="Maintenance\Unsupported Browser.html" />
     <Content Include="AddonsCustom\Web.config" />
     <Content Include="package.json" />
+    <Content Include="Localization\Web.config" />
+    <Content Include="bower_components\Web.config" />
+    <Content Include="node_modules\Web.config" />
     <Content Include="bower.json" />
+    <Content Include="LocalizationCustom\Web.config" />
     <None Include="packages.config" />
     <Content Include="Maintenance\UpdateIndicator.txt" />
     <Content Include="Global.asax" />
     <Content Include="robots.txt" />
+    <Content Include="SiteFiles\placeholder.txt" />
+    <Content Include="SiteTemplates\Data\Add Additional Site.txt" />
+    <Content Include="SiteTemplates\Data\Add Site.txt" />
     <Content Include="SiteTemplates\Web.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Web.config">
@@ -139,12 +147,10 @@
     </Content>
     <Content Include="Sites\Web.config" />
     <Content Include="Vault\Web.config" />
-    <None Include="tsconfig.json" />
-    <None Include="tslint.json" />
+    <Content Include="tsconfig.json" />
+    <Content Include="tslint.json" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="SiteFiles\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\CoreComponents\Core\Core.csproj">
       <Project>{71ACC7AC-2622-4127-B925-D058C01A39E5}</Project>
