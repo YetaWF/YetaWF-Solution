@@ -137,6 +137,7 @@
     <Content Include="Maintenance\UpdateIndicator.txt" />
     <Content Include="Global.asax" />
     <Content Include="robots.txt" />
+    <Content Include="SiteFiles\placeholder.txt" />
     <Content Include="SiteTemplates\Data\Add Additional Site.txt" />
     <Content Include="SiteTemplates\Data\Add Site.txt" />
     <Content Include="SiteTemplates\Web.config" />
@@ -149,9 +150,7 @@
     <Content Include="tsconfig.json" />
     <Content Include="tslint.json" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="SiteFiles\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\CoreComponents\Core\Core.csproj">
       <Project>{71ACC7AC-2622-4127-B925-D058C01A39E5}</Project>
