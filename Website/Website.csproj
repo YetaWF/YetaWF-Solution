@@ -196,6 +196,10 @@
       <Project>{e0109f2e-764d-4173-bd8b-b690bff87648}</Project>
       <Name>Caching</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\ComponentsHTML\ComponentsHTML.csproj">
+      <Project>{ab7bfd23-57e8-40a6-85ea-9d4b3206075f}</Project>
+      <Name>ComponentsHTML</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Modules\YetaWF\CurrencyConverter\CurrencyConverter.csproj">
       <Project>{C2EED268-B63B-4A74-927E-FE4C13ADB3C5}</Project>
       <Name>CurrencyConverter</Name>
@@ -243,6 +247,10 @@
     <ProjectReference Include="..\Modules\YetaWF\Menus\Menus.csproj">
       <Project>{AC2FC261-B14A-489A-809B-89E878A44A77}</Project>
       <Name>Menus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\Messenger\Messenger.csproj">
+      <Project>{8ed71c70-c6c1-48c0-8b2e-153b215f1987}</Project>
+      <Name>Messenger</Name>
     </ProjectReference>
     <ProjectReference Include="..\Modules\YetaWF\ModuleEdit\ModuleEdit.csproj">
       <Project>{388F8552-48F1-4A3A-8CD7-117DA776783A}</Project>
@@ -311,6 +319,10 @@
     <ProjectReference Include="..\Modules\YetaWF\TinyLogin\TinyLogin.csproj">
       <Project>{E0AD8487-7A53-4BE7-B012-5D2377F5CCEA}</Project>
       <Name>TinyLogin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\TwilioProcessor\TwilioProcessor.csproj">
+      <Project>{be293a6c-8f06-4b4c-8b88-65787f57f098}</Project>
+      <Name>TwilioProcessor</Name>
     </ProjectReference>
     <ProjectReference Include="..\Modules\YetaWF\UserProfile\UserProfile.csproj">
       <Project>{0A7C8A1C-F00B-47B8-9C8B-73819964860A}</Project>
