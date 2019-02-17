@@ -1,4 +1,4 @@
-﻿/* Copyright © 2018 Softel vdm, Inc. - https://yetawf.com/Documentation/YetaWF/Licensing */
+﻿/* Copyright © 2019 Softel vdm, Inc. - https://yetawf.com/Documentation/YetaWF/Licensing */
 
 // If you get a message like "node sass could not find a binding for your current environment: windows 64-bit with node.js 4.x"
 // when running sass, use "npm rebuild node-sass".
