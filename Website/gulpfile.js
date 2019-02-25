@@ -28,7 +28,7 @@ var tsFolders = [
 ];
 gulp.task('ts', () => {
     var tsProject = ts.createProject('tsconfig.json');
-    gulp.src(tsFolders, { follow: true })
+    return gulp.src(tsFolders, { follow: true })
         .pipe(print())
         .pipe(sourcemaps.init())
         .pipe(tsProject())
@@ -42,8 +42,8 @@ gulp.task('ts', () => {
 
 /* TypeScript Lint */
 var tslint = require("gulp-tslint");
-gulp.task("tslint", () =>
-    gulp.src(tsFolders, { follow: true })
+gulp.task("tslint", () => {
+    return gulp.src(tsFolders, { follow: true })
         .pipe(print())
         .pipe(tslint({
             formatter: "msbuild",
@@ -51,8 +51,10 @@ gulp.task("tslint", () =>
         }))
         .pipe(tslint.report({
             reportLimit: 50
-        }))
+        }));
+    }
 );
+
 
 /* Scss Compile */
 var sass = require('gulp-sass');
@@ -66,7 +68,7 @@ gulp.task('sass', () => {
     //var sourcemaps = require('gulp-sourcemaps');
     var autoprefixer = require('autoprefixer');
 
-    gulp.src(sassFolders, { follow: true })
+    return gulp.src(sassFolders, { follow: true })
         .pipe(print())
         .pipe(sass({
             includePaths: "node_modules",
@@ -101,8 +103,8 @@ gulp.task('less', () =>
 
 /* Javascript minify */
 var minify = require("gulp-minify");
-gulp.task('minify-js', () =>
-    gulp.src(["AddOns/**/*.js",
+gulp.task('minify-js', () => {
+    return gulp.src(["AddOns/**/*.js",
             "AddOnsCustom/**/*.js",
             "node_modules/jquery-validation-unobtrusive/*.js",
             "node_modules/urijs/src/*.js",
@@ -120,13 +122,14 @@ gulp.task('minify-js', () =>
         }))
         .pipe(gulp.dest(function (file) {
             return file.base;
-        }))
+        }));
+    }
 );
 
 /* CSS Minify */
 var cleanCSS = require('gulp-clean-css');
-gulp.task('minify-css', () =>
-    gulp.src(["AddOns/**/*.css",
+gulp.task('minify-css', () => {
+    return gulp.src(["AddOns/**/*.css",
             "AddOnsCustom/**/*.css",
             "Vault/**/*.css",
             "node_modules/normalize-css/*.css",
@@ -136,14 +139,15 @@ gulp.task('minify-css', () =>
         ], { follow: true })
         .pipe(print())
         .pipe(cleanCSS({
-            compatibility: 'ie8',
+            compatibility: { properties: { zeroUnits: false } },
             inline: ['local'], // enables local inlining
             rebase: false // don't change url()
         }))
         .pipe(ext_replace(".min.css"))
         .pipe(gulp.dest(function (file) {
             return file.base;
-        }))
+        }));
+    }
 );
 
 /* Copy required *.d.ts files */
@@ -157,7 +161,7 @@ var dtsFolders = [
     "AddOns/YetaWF/ComponentsHTML/_Templates/**/*.d.ts",
 ];
 gulp.task('copydts', function () {
-    gulp.src(dtsFolders, { follow: true })
+    return gulp.src(dtsFolders, { follow: true })
         .pipe(print())
         .pipe(gulp.dest('./node_modules/@types/YetaWF/HTML/'));
 });
@@ -168,5 +172,6 @@ gulp.task('watch', function () {
     gulp.watch(sassFolders, ['sass']);
     gulp.watch(lessFolders, ['less']);
 });
+
 
 
