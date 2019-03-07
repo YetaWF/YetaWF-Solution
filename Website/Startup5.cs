@@ -8,7 +8,7 @@ using YetaWF.Core.Packages;
 using YetaWF.Core.Site;
 using YetaWF.Core.Support;
 
-[assembly: WebActivatorEx.PostApplicationStartMethod(typeof(YetaWF.App_Start.Startup), "Start")]
+[assembly: WebActivatorEx.PostApplicationStartMethod(typeof(YetaWF.App_Start.Startup), nameof(YetaWF.App_Start.Startup.Start))]
 
 namespace YetaWF.App_Start {
 
