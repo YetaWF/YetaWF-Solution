@@ -164,6 +164,10 @@
       <Project>{D07F04A5-A3DF-42BB-9CD9-7719BB765A94}</Project>
       <Name>ImageHttpHandler</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CoreComponents\WebpHttpHandler\WebpHttpHandler.csproj">
+      <Project>{7efb9360-23ce-4d57-a8bf-8fc82689a006}</Project>
+      <Name>WebpHttpHandler</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataProvider\Localization\Localization.csproj">
       <Project>{95824F1C-E1A5-42D3-915A-D55F10882743}</Project>
       <Name>Localization</Name>

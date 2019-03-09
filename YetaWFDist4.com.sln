@@ -117,6 +117,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messenger", "Modules\YetaWF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwilioProcessor", "Modules\YetaWF\TwilioProcessor\TwilioProcessor.csproj", "{BE293A6C-8F06-4B4C-8B88-65787F57F098}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebpHttpHandler", "CoreComponents\WebpHttpHandler\WebpHttpHandler.csproj", "{7EFB9360-23CE-4D57-A8BF-8FC82689A006}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -323,6 +325,10 @@ Global
 		{BE293A6C-8F06-4B4C-8B88-65787F57F098}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE293A6C-8F06-4B4C-8B88-65787F57F098}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE293A6C-8F06-4B4C-8B88-65787F57F098}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EFB9360-23CE-4D57-A8BF-8FC82689A006}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EFB9360-23CE-4D57-A8BF-8FC82689A006}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EFB9360-23CE-4D57-A8BF-8FC82689A006}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EFB9360-23CE-4D57-A8BF-8FC82689A006}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -379,6 +385,7 @@ Global
 		{AB7BFD23-57E8-40A6-85EA-9D4B3206075F} = {A6B92883-EBFB-4DFE-9817-52EC7E1EDB0C}
 		{8ED71C70-C6C1-48C0-8B2E-153B215F1987} = {A6B92883-EBFB-4DFE-9817-52EC7E1EDB0C}
 		{BE293A6C-8F06-4B4C-8B88-65787F57F098} = {A6B92883-EBFB-4DFE-9817-52EC7E1EDB0C}
+		{7EFB9360-23CE-4D57-A8BF-8FC82689A006} = {DD29F439-3F33-4B7E-AD95-DF6B54430782}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DAE1FE41-2A28-4586-8E87-957795F61EB2}
