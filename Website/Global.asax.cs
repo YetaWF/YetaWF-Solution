@@ -21,6 +21,7 @@ namespace YetaWF {
             EndRequest += MvcApplication_EndRequest;
             Error += MvcApplication_Error;
 
+            if (string.IsNullOrWhiteSpace(YetaWFManager.RootFolder)) {
             YetaWFManager.RootFolder = YetaWFManager.UrlToPhysical("/").TrimEnd(new char[] { '\\' });
             WebConfigHelper.InitAsync(Path.Combine(YetaWFManager.RootFolder, Globals.DataFolder, AppSettingsFile)).Wait();
 
@@ -39,6 +40,7 @@ namespace YetaWF {
             System.Web.Helpers.AntiForgeryConfig.CookieName = "__ReqVerToken_" + siteDomain;
 
             System.Web.Helpers.AntiForgeryConfig.SuppressXFrameOptionsHeader = true;
+            }
         }
 
         private void MvcApplication_EndRequest(object sender, EventArgs e) {

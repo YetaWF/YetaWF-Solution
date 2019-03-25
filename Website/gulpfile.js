@@ -177,6 +177,8 @@ gulp.task('images-webp', () => {
         "AddOnsCustom/**/*.png",
         "AddOnsCustom/**/*.jpg",
         "AddOnsCustom/**/*.jpeg",
+        "**/YetaWF_Modules/**/Images/*.png",
+        "**/YetaWF_Modules/**/Images/*.jpg",
         "!**/Assets/**"
     ], { follow: true })
     .pipe(print())
