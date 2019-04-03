@@ -340,6 +340,10 @@
       <Project>{13C9BCDD-B595-4A96-B541-A493086ABFEE}</Project>
       <Name>Visitors</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Skins\YetaWF\BootstrapSkin\BootstrapSkin.csproj">
+      <Project>{57371107-dc29-428f-ae62-45a3a00507fe}</Project>
+      <Name>BootstrapSkin</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Skins\YetaWF\DefaultSkin\DefaultSkin.csproj">
       <Project>{6de84c3a-4a83-4e13-9beb-48933bf5cebc}</Project>
       <Name>DefaultSkin</Name>
