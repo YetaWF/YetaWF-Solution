@@ -43,9 +43,6 @@ namespace YetaWF.App_Start {
                     new string[] { "YetaWF.Core.Controllers", } // namespace
                 );
 
-                // Find all the views/areas that are available to the website (i.e., core + modules)
-                ViewEnginesStartup.Start();
-
                 // External data providers
                 ExternalDataProviders.RegisterExternalDataProviders();
                 // Call all classes that expose the interface IInitializeApplicationStartup
