@@ -22,24 +22,24 @@ namespace YetaWF {
             Error += MvcApplication_Error;
 
             if (string.IsNullOrWhiteSpace(YetaWFManager.RootFolder)) {
-            YetaWFManager.RootFolder = YetaWFManager.UrlToPhysical("/").TrimEnd(new char[] { '\\' });
-            WebConfigHelper.InitAsync(Path.Combine(YetaWFManager.RootFolder, Globals.DataFolder, AppSettingsFile)).Wait();
+                YetaWFManager.RootFolder = YetaWFManager.UrlToPhysical("/").TrimEnd(new char[] { '\\' });
+                WebConfigHelper.InitAsync(Path.Combine(YetaWFManager.RootFolder, Globals.DataFolder, AppSettingsFile)).Wait();
 
-            // retrieve the default domain to verify it has been defined in Appsettings.json
-            string siteDomain = YetaWFManager.DefaultSiteName;
-            // We're renaming the __RequestVerificationToken cookie (not the <input hidden> name) for anti-forgery.
-            // We ran into this problem where we host https://yetawf.com in a YetaWF instance (one IIS site) and host
-            // http://forum.yetawf.com (another IIS site elsewhere). Because they are the same domain name, just different
-            // subdomains, browsers will return TWO __RequestVerificationToken cookies (when the user has visited both
-            // sites) causing anti-forgery confusion. This can also be fixed with machinekey settings (forcing both sites
-            // to use the same keys). But it is easier to just rename our COOKIE. While both sites will still get
-            // both cookies, they now use different names, eliminating the confusion.
-            // Please note the distinction between the __RequestVerificationToken COOKIE and the
-            // __RequestVerificationToken hidden input field. Only the cookie is renamed. There is no need to
-            // rename the input field.
-            System.Web.Helpers.AntiForgeryConfig.CookieName = "__ReqVerToken_" + siteDomain;
+                // retrieve the default domain to verify it has been defined in Appsettings.json
+                string siteDomain = YetaWFManager.DefaultSiteName;
+                // We're renaming the __RequestVerificationToken cookie (not the <input hidden> name) for anti-forgery.
+                // We ran into this problem where we host https://yetawf.com in a YetaWF instance (one IIS site) and host
+                // http://forum.yetawf.com (another IIS site elsewhere). Because they are the same domain name, just different
+                // subdomains, browsers will return TWO __RequestVerificationToken cookies (when the user has visited both
+                // sites) causing anti-forgery confusion. This can also be fixed with machinekey settings (forcing both sites
+                // to use the same keys). But it is easier to just rename our COOKIE. While both sites will still get
+                // both cookies, they now use different names, eliminating the confusion.
+                // Please note the distinction between the __RequestVerificationToken COOKIE and the
+                // __RequestVerificationToken hidden input field. Only the cookie is renamed. There is no need to
+                // rename the input field.
+                System.Web.Helpers.AntiForgeryConfig.CookieName = "__ReqVerToken_" + siteDomain;
 
-            System.Web.Helpers.AntiForgeryConfig.SuppressXFrameOptionsHeader = true;
+                System.Web.Helpers.AntiForgeryConfig.SuppressXFrameOptionsHeader = true;
             }
         }
 
