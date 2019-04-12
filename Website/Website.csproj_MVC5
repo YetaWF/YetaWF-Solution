@@ -137,7 +137,6 @@
     <Content Include="SiteTemplates\Data\Add Additional Site.txt" />
     <Content Include="SiteTemplates\Data\Add Site.txt" />
     <Content Include="SiteTemplates\Web.config" />
-    <Content Include="Views\Web.config" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
