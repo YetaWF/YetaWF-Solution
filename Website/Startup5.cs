@@ -8,7 +8,7 @@ using YetaWF.Core.Packages;
 using YetaWF.Core.Site;
 using YetaWF.Core.Support;
 
-[assembly: WebActivatorEx.PostApplicationStartMethod(typeof(YetaWF.App_Start.Startup), "Start")]
+[assembly: WebActivatorEx.PostApplicationStartMethod(typeof(YetaWF.App_Start.Startup), nameof(YetaWF.App_Start.Startup.Start))]
 
 namespace YetaWF.App_Start {
 
@@ -42,9 +42,6 @@ namespace YetaWF.App_Start {
                     new { controller = "Page", action = "Show" },
                     new string[] { "YetaWF.Core.Controllers", } // namespace
                 );
-
-                // Find all the views/areas that are available to the website (i.e., core + modules)
-                ViewEnginesStartup.Start();
 
                 // External data providers
                 ExternalDataProviders.RegisterExternalDataProviders();

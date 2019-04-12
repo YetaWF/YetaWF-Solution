@@ -8,12 +8,12 @@ var print = require('gulp-print').default;
 var ext_replace = require('gulp-ext-replace');
 var lec = require('gulp-line-ending-corrector');
 
-var runSequence = require('run-sequence');
-gulp.task('DebugBuild', () => {
-    runSequence(['sass', 'less'] ,'ts', 'copydts');
+var runSequence = require('gulp4-run-sequence');
+gulp.task('DebugBuild', (callback) => {
+    return runSequence(['sass', 'less'], 'ts', 'copydts', ['images-webp'], callback);
 });
-gulp.task('ReleaseBuild', () => {
-    runSequence(['sass', 'less'], ['ts', 'tslint'], 'copydts', ["minify-js", "minify-css"]);
+gulp.task('ReleaseBuild', (callback) => {
+    return runSequence(['sass', 'less'], ['ts', 'tslint'], 'copydts', ["minify-js", "minify-css"], ['images-webp'], callback);
 });
 
 /* TypeScript Compile */
@@ -89,15 +89,16 @@ var lessFolders = [
     "!**/*.min.less",
     "!**/*.pack.less"
 ];
-gulp.task('less', () =>
-    gulp.src(lessFolders, { follow: true })
+gulp.task('less', () => {
+    return gulp.src(lessFolders, { follow: true })
         .pipe(print())
         .pipe(less())
         .pipe(ext_replace(".css"))
         .pipe(lec({ eolc: 'CRLF' })) //OMG - We'll deal with it later...
         .pipe(gulp.dest(function (file) {
             return file.base;
-        }))
+        }));
+    }
 );
 
 
@@ -164,6 +165,29 @@ gulp.task('copydts', function () {
     return gulp.src(dtsFolders, { follow: true })
         .pipe(print())
         .pipe(gulp.dest('./node_modules/@types/YetaWF/HTML/'));
+});
+
+/* Images -> webp */
+var webp = require("gulp-webp");
+gulp.task('images-webp', () => {
+    return gulp.src([
+        "AddOns/**/*.png",
+        "AddOns/**/*.jpg",
+        "AddOns/**/*.jpeg",
+        "AddOnsCustom/**/*.png",
+        "AddOnsCustom/**/*.jpg",
+        "AddOnsCustom/**/*.jpeg",
+        "**/YetaWF_Modules/**/Images/*.png",
+        "**/YetaWF_Modules/**/Images/*.jpg",
+        "!**/Assets/**"
+    ], { follow: true })
+    .pipe(print())
+    .pipe(webp())
+    .pipe(ext_replace(".webp-gen"))
+    //.pipe(gulp.dest('dist'));
+    .pipe(gulp.dest(function (file) {
+        return file.base;
+    }));
 });
 
 gulp.task('watch', function () {

@@ -77,10 +77,6 @@
       <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
@@ -90,12 +86,12 @@
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
@@ -141,7 +137,6 @@
     <Content Include="SiteTemplates\Data\Add Additional Site.txt" />
     <Content Include="SiteTemplates\Data\Add Site.txt" />
     <Content Include="SiteTemplates\Web.config" />
-    <Content Include="Views\Web.config" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -163,6 +158,10 @@
     <ProjectReference Include="..\CoreComponents\ImageHttpHandler\ImageHttpHandler.csproj">
       <Project>{D07F04A5-A3DF-42BB-9CD9-7719BB765A94}</Project>
       <Name>ImageHttpHandler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CoreComponents\WebpHttpHandler\WebpHttpHandler.csproj">
+      <Project>{7efb9360-23ce-4d57-a8bf-8fc82689a006}</Project>
+      <Name>WebpHttpHandler</Name>
     </ProjectReference>
     <ProjectReference Include="..\DataProvider\Localization\Localization.csproj">
       <Project>{95824F1C-E1A5-42D3-915A-D55F10882743}</Project>
@@ -335,6 +334,10 @@
     <ProjectReference Include="..\Modules\YetaWF\Visitors\Visitors.csproj">
       <Project>{13C9BCDD-B595-4A96-B541-A493086ABFEE}</Project>
       <Name>Visitors</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Skins\YetaWF\BootstrapSkin\BootstrapSkin.csproj">
+      <Project>{57371107-dc29-428f-ae62-45a3a00507fe}</Project>
+      <Name>BootstrapSkin</Name>
     </ProjectReference>
     <ProjectReference Include="..\Skins\YetaWF\DefaultSkin\DefaultSkin.csproj">
       <Project>{6de84c3a-4a83-4e13-9beb-48933bf5cebc}</Project>
