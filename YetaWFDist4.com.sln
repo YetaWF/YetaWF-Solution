@@ -5,7 +5,11 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Website", "Website\Website.csproj", "{A3B319C1-9328-4C4B-8A52-510F09317809}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CopySite", "CopySite", "{B5F2C94C-C522-4617-8EB6-9F0D485CC1C9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deploy Windows", "Deploy Windows", "{B5F2C94C-C522-4617-8EB6-9F0D485CC1C9}"
+	ProjectSection(SolutionItems) = preProject
+		web-BLUE.config = web-BLUE.config
+		web-GREEN.config = web-GREEN.config
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataProvider", "DataProvider", "{F25BDDB8-D549-48E5-8EF2-20368DAF405B}"
 EndProject
@@ -124,6 +128,20 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublicTools", "PublicTools", "{0F4087E5-6C5F-4AC0-BE0E-B87CF55A5ED7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatusCheck", "PublicTools\StatusCheck\StatusCheck.csproj", "{DA964EF0-ABC7-435F-8917-14C6672A63DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopySite", "PublicTools\CopySite\CopySite.csproj", "{D754E468-BBFE-42E0-85FE-0ECAFA35D702}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectSettings", "PublicTools\ProjectSettings\ProjectSettings.csproj", "{BAE8984C-DBE2-4036-AD1B-04522F0C108B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetrievePages", "PublicTools\RetrievePages\RetrievePages.csproj", "{829AAD4F-9CA3-4446-A383-7F29017AE2D5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{916D523C-BB79-4B26-8713-27608243122B}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		.gitmodules = .gitmodules
+		post-clone.bat = post-clone.bat
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -343,6 +361,18 @@ Global
 		{DA964EF0-ABC7-435F-8917-14C6672A63DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA964EF0-ABC7-435F-8917-14C6672A63DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA964EF0-ABC7-435F-8917-14C6672A63DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D754E468-BBFE-42E0-85FE-0ECAFA35D702}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D754E468-BBFE-42E0-85FE-0ECAFA35D702}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D754E468-BBFE-42E0-85FE-0ECAFA35D702}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D754E468-BBFE-42E0-85FE-0ECAFA35D702}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAE8984C-DBE2-4036-AD1B-04522F0C108B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAE8984C-DBE2-4036-AD1B-04522F0C108B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAE8984C-DBE2-4036-AD1B-04522F0C108B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAE8984C-DBE2-4036-AD1B-04522F0C108B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{829AAD4F-9CA3-4446-A383-7F29017AE2D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{829AAD4F-9CA3-4446-A383-7F29017AE2D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{829AAD4F-9CA3-4446-A383-7F29017AE2D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{829AAD4F-9CA3-4446-A383-7F29017AE2D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -402,6 +432,9 @@ Global
 		{7EFB9360-23CE-4D57-A8BF-8FC82689A006} = {DD29F439-3F33-4B7E-AD95-DF6B54430782}
 		{57371107-DC29-428F-AE62-45A3A00507FE} = {E5B4AA83-CB82-4DCE-B9A0-E7BCAEF51D1E}
 		{DA964EF0-ABC7-435F-8917-14C6672A63DC} = {0F4087E5-6C5F-4AC0-BE0E-B87CF55A5ED7}
+		{D754E468-BBFE-42E0-85FE-0ECAFA35D702} = {0F4087E5-6C5F-4AC0-BE0E-B87CF55A5ED7}
+		{BAE8984C-DBE2-4036-AD1B-04522F0C108B} = {0F4087E5-6C5F-4AC0-BE0E-B87CF55A5ED7}
+		{829AAD4F-9CA3-4446-A383-7F29017AE2D5} = {0F4087E5-6C5F-4AC0-BE0E-B87CF55A5ED7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DAE1FE41-2A28-4586-8E87-957795F61EB2}
