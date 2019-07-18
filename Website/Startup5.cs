@@ -1,5 +1,6 @@
 ﻿/* Copyright © 2019 Softel vdm, Inc. - https://yetawf.com/Documentation/YetaWF/Licensing */
 
+using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using YetaWF.Core.DataProvider;
@@ -16,7 +17,7 @@ namespace YetaWF.App_Start {
 
         public static void Start() {
 
-            YetaWFManager manager = YetaWFManager.MakeInstance("__STARTUP"); // while loading packages we need a manager
+            YetaWFManager manager = YetaWFManager.MakeInstance(HttpContext.Current, "__STARTUP"); // while loading packages we need a manager
 
             YetaWFManager.Syncify(async () => { // Startup, so async is pointless
 

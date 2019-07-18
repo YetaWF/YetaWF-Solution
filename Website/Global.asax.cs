@@ -22,7 +22,7 @@ namespace YetaWF {
             Error += MvcApplication_Error;
 
             if (string.IsNullOrWhiteSpace(YetaWFManager.RootFolder)) {
-                YetaWFManager.RootFolder = YetaWFManager.UrlToPhysical("/").TrimEnd(new char[] { '\\' });
+                YetaWFManager.RootFolder = Utility.UrlToPhysical("/").TrimEnd(new char[] { '\\' });
                 WebConfigHelper.InitAsync(Path.Combine(YetaWFManager.RootFolder, Globals.DataFolder, AppSettingsFile)).Wait();
 
                 // retrieve the default domain to verify it has been defined in Appsettings.json

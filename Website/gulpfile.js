@@ -37,8 +37,7 @@ gulp.task('ts', () => {
         .pipe(gulp.dest(function (file) {
             return file.base;
         }));
-    }
-);
+});
 
 /* TypeScript Lint */
 var tslint = require("gulp-tslint");
@@ -60,7 +59,7 @@ gulp.task("tslint", () => {
 var sass = require('gulp-sass');
 var sassFolders = [
     "AddOns/**/*.scss",
-    "Vault/**/*.scss",
+    "Vault/**/*.scss"
 ];
 gulp.task('sass', () => {
 
@@ -78,7 +77,7 @@ gulp.task('sass', () => {
         .pipe(postcss([autoprefixer()]))
         .pipe(gulp.dest(function (file) {
             return file.base;
-        }));
+    }));
 });
 
 /* Less Compile */
@@ -159,6 +158,7 @@ var dtsFolders = [
     "AddOns/YetaWF/ComponentsHTML/_Addons/Forms/*.d.ts",
     "AddOns/YetaWF/ComponentsHTML/_Addons/Popups/*.d.ts",
     "AddOns/YetaWF/ComponentsHTML/_Main/ComponentsHTML.d.ts",
+    "AddOns/YetaWF/ComponentsHTML/_Main/Controls.d.ts",
     "AddOns/YetaWF/ComponentsHTML/_Templates/**/*.d.ts",
 ];
 gulp.task('copydts', function () {
