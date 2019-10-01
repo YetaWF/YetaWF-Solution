@@ -1,4 +1,5 @@
 Softelvdm.TwilioProcessor 5.0.0
+Softelvdm.TwilioProcessorDataProvider 5.0.0
 YetaWF.AddThis 5.0.0
 YetaWF.Backups 5.0.0
 YetaWF.Basics 5.0.0
@@ -27,6 +28,7 @@ YetaWF.ImageRepository 5.0.0
 YetaWF.Languages 5.0.0
 YetaWF.Lightbox 5.0.0
 YetaWF.Logging 5.0.0
+YetaWF.LoggingDataProvider 5.0.0
 YetaWF.Menus 5.0.0
 YetaWF.Messenger 5.0.0
 YetaWF.ModuleEdit 5.0.0
