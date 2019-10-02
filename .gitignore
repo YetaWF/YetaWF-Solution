@@ -1,3 +1,4 @@
+
 *._ci_*.css
 *._cmpld_.*
 *.axds
@@ -21,10 +22,15 @@ thumbs.db
 
 ~*.docx
 
+
+CoreComponents/**/bin
+DataProvider/**/bin
+Modules/**/bin
+PublicTools/**/bin
+Skins/**/bin
+Website/**/bin
+
 **/obj/
-**/bin/**/*.xml
-**/bin/**/*.config
-**/bin/**/*.manifest
 
 **/Logfile.txt
 
@@ -39,26 +45,13 @@ temp/
 /Website/Areas/**/
 /Website/aspnet_client/
 /Website/Block/
-
-/Website/Docs/
-
+/Website/bower_components
+/Website/Data/StartupLogFile.txt
 /Website/Data/UpgradeLogFile.txt
+/Website/Docs/
+/Website/Localization/
+/Website/node_modules
 /Website/SiteTemplates/*.txt
 
-Website/Data/Appsettings.YetaWFDist4.json
-Website/Data/Appsettings.Generic.json
-Website/Data/Appsettings.GenericProd.json
-Website/Data/LanguageSettings.Generic.json
-Website/Data/MimeSettings.Generic.json
-Website/Web.Generic.Prod.config
-Website/Web.Generic.config
-Website/Website.Generic.csproj
-Website/Website.Generic.csproj_MVC5
-YetaWF.Generic.sln
+/Website/package-lock.json
 
-Website/bower_components
-Website/node_modules
-Website/package-lock.json
-
-Website/Data/StartupLogFile.txt
-Website/Localization/

@@ -10,9 +10,9 @@
 [submodule "Skins/YetaWF"]
 	path = Skins/YetaWF
 	url = https://github.com/YetaWF/YetaWF-Skins
+[submodule "PublicTools"]
+	path = PublicTools
+	url = https://github.com/YetaWF/YetaWF-PublicTools
 [submodule "Localization/en-US/YetaWF"]
 	path = Localization/en-US/YetaWF
 	url = https://github.com/YetaWF/Localization-YetaWF-Modules-en-US
-[submodule "PublicTools"]
-	path = PublicTools
-	url = https://github.com/YetaWF/PublicTools

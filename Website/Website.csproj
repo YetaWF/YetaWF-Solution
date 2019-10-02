@@ -30,6 +30,7 @@
     <UseGlobalApplicationHostFile />
     <TargetFrameworkProfile />
     <Use64BitIISExpress />
+    <AutoGenerateBindingRedirects>True</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -239,6 +240,10 @@
       <Project>{BDBF17B7-A629-4958-B804-BF7FFCF1671A}</Project>
       <Name>Lightbox</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\LoggingDataProvider\LoggingDataProvider.csproj">
+      <Project>{267c19bf-1b4a-48d2-a803-781ab2952736}</Project>
+      <Name>LoggingDataProvider</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Modules\YetaWF\Logging\Logging.csproj">
       <Project>{EAE0AE43-F32E-436D-8F4E-302AACB99C16}</Project>
       <Name>Logging</Name>
@@ -318,6 +323,10 @@
     <ProjectReference Include="..\Modules\YetaWF\TinyLogin\TinyLogin.csproj">
       <Project>{E0AD8487-7A53-4BE7-B012-5D2377F5CCEA}</Project>
       <Name>TinyLogin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\YetaWF\TwilioProcessorDataProvider\TwilioProcessorDataProvider.csproj">
+      <Project>{48ea4dda-3b1e-46b0-af4d-13aa46e921d0}</Project>
+      <Name>TwilioProcessorDataProvider</Name>
     </ProjectReference>
     <ProjectReference Include="..\Modules\YetaWF\TwilioProcessor\TwilioProcessor.csproj">
       <Project>{be293a6c-8f06-4b4c-8b88-65787f57f098}</Project>

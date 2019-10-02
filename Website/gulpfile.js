@@ -37,8 +37,7 @@ gulp.task('ts', () => {
         .pipe(gulp.dest(function (file) {
             return file.base;
         }));
-    }
-);
+});
 
 /* TypeScript Lint */
 var tslint = require("gulp-tslint");
@@ -59,8 +58,8 @@ gulp.task("tslint", () => {
 /* Scss Compile */
 var sass = require('gulp-sass');
 var sassFolders = [
-    "AddOns/**/*.scss",
-    "Vault/**/*.scss",
+    "Addons/**/*.scss",
+    "Vault/**/*.scss"
 ];
 gulp.task('sass', () => {
 
@@ -78,13 +77,13 @@ gulp.task('sass', () => {
         .pipe(postcss([autoprefixer()]))
         .pipe(gulp.dest(function (file) {
             return file.base;
-        }));
+    }));
 });
 
 /* Less Compile */
 var less = require('gulp-less');
 var lessFolders = [
-    "AddOns/**/*.less",
+    "Addons/**/*.less",
     "Vault/**/*.less",
     "!**/*.min.less",
     "!**/*.pack.less"
@@ -105,8 +104,8 @@ gulp.task('less', () => {
 /* Javascript minify */
 var minify = require("gulp-minify");
 gulp.task('minify-js', () => {
-    return gulp.src(["AddOns/**/*.js",
-            "AddOnsCustom/**/*.js",
+    return gulp.src(["Addons/**/*.js",
+            "AddonsCustom/**/*.js",
             "node_modules/jquery-validation-unobtrusive/*.js",
             "node_modules/urijs/src/*.js",
             "!**/*.min.js",
@@ -130,8 +129,8 @@ gulp.task('minify-js', () => {
 /* CSS Minify */
 var cleanCSS = require('gulp-clean-css');
 gulp.task('minify-css', () => {
-    return gulp.src(["AddOns/**/*.css",
-            "AddOnsCustom/**/*.css",
+    return gulp.src(["Addons/**/*.css",
+            "AddonsCustom/**/*.css",
             "Vault/**/*.css",
             "node_modules/normalize-css/*.css",
             "node_modules/smartmenus/dist/addons/bootstrap-4/*.css",
@@ -159,7 +158,8 @@ var dtsFolders = [
     "AddOns/YetaWF/ComponentsHTML/_Addons/Forms/*.d.ts",
     "AddOns/YetaWF/ComponentsHTML/_Addons/Popups/*.d.ts",
     "AddOns/YetaWF/ComponentsHTML/_Main/ComponentsHTML.d.ts",
-    "AddOns/YetaWF/ComponentsHTML/_Templates/**/*.d.ts",
+    "AddOns/YetaWF/ComponentsHTML/_Main/Controls.d.ts",
+    "AddOns/YetaWF/ComponentsHTML/_Templates/**/*.d.ts"
 ];
 gulp.task('copydts', function () {
     return gulp.src(dtsFolders, { follow: true })
@@ -171,12 +171,12 @@ gulp.task('copydts', function () {
 var webp = require("gulp-webp");
 gulp.task('images-webp', () => {
     return gulp.src([
-        "AddOns/**/*.png",
-        "AddOns/**/*.jpg",
-        "AddOns/**/*.jpeg",
-        "AddOnsCustom/**/*.png",
-        "AddOnsCustom/**/*.jpg",
-        "AddOnsCustom/**/*.jpeg",
+        "Addons/**/*.png",
+        "Addons/**/*.jpg",
+        "Addons/**/*.jpeg",
+        "AddonsCustom/**/*.png",
+        "AddonsCustom/**/*.jpg",
+        "AddonsCustom/**/*.jpeg",
         "**/YetaWF_Modules/**/Images/*.png",
         "**/YetaWF_Modules/**/Images/*.jpg",
         "!**/Assets/**"
