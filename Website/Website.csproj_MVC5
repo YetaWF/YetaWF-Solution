@@ -105,7 +105,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Startup5.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddOns\Web.config" />
@@ -163,6 +162,10 @@
     <ProjectReference Include="..\CoreComponents\WebpHttpHandler\WebpHttpHandler.csproj">
       <Project>{7efb9360-23ce-4d57-a8bf-8fc82689a006}</Project>
       <Name>WebpHttpHandler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CoreComponents\WebStartup\WebStartup.csproj">
+      <Project>{9a7681d2-fe7a-4377-833f-ac0924e9245e}</Project>
+      <Name>WebStartup</Name>
     </ProjectReference>
     <ProjectReference Include="..\DataProvider\Localization\Localization.csproj">
       <Project>{95824F1C-E1A5-42D3-915A-D55F10882743}</Project>

@@ -152,14 +152,14 @@ gulp.task('minify-css', () => {
 
 /* Copy required *.d.ts files */
 var dtsFolders = [
-    "AddOns/YetaWF/Core/_Addons/Basics/*.d.ts",
-    "AddOns/YetaWF/Core/_Addons/Forms/*.d.ts",
-    "AddOns/YetaWF/Core/_Addons/Popups/*.d.ts",
-    "AddOns/YetaWF/ComponentsHTML/_Addons/Forms/*.d.ts",
-    "AddOns/YetaWF/ComponentsHTML/_Addons/Popups/*.d.ts",
-    "AddOns/YetaWF/ComponentsHTML/_Main/ComponentsHTML.d.ts",
-    "AddOns/YetaWF/ComponentsHTML/_Main/Controls.d.ts",
-    "AddOns/YetaWF/ComponentsHTML/_Templates/**/*.d.ts"
+    "Addons/YetaWF/Core/_Addons/Basics/*.d.ts",
+    "Addons/YetaWF/Core/_Addons/Forms/*.d.ts",
+    "Addons/YetaWF/Core/_Addons/Popups/*.d.ts",
+    "Addons/YetaWF/ComponentsHTML/_Addons/Forms/*.d.ts",
+    "Addons/YetaWF/ComponentsHTML/_Addons/Popups/*.d.ts",
+    "Addons/YetaWF/ComponentsHTML/_Main/ComponentsHTML.d.ts",
+    "Addons/YetaWF/ComponentsHTML/_Main/Controls.d.ts",
+    "Addons/YetaWF/ComponentsHTML/_Templates/**/*.d.ts",
 ];
 gulp.task('copydts', function () {
     return gulp.src(dtsFolders, { follow: true })
