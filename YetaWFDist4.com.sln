@@ -151,6 +151,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebStartup", "CoreComponent
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleStartup", "CoreComponents\ConsoleStartup\ConsoleStartup.csproj", "{06396B37-AEAE-4E3A-92B6-224AD6A95690}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoLocation", "CoreComponents\GeoLocation\GeoLocation.csproj", "{F89EA0EE-BEB2-468B-ACDE-59EFB5694C11}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -397,6 +399,10 @@ Global
 		{06396B37-AEAE-4E3A-92B6-224AD6A95690}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06396B37-AEAE-4E3A-92B6-224AD6A95690}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06396B37-AEAE-4E3A-92B6-224AD6A95690}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F89EA0EE-BEB2-468B-ACDE-59EFB5694C11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F89EA0EE-BEB2-468B-ACDE-59EFB5694C11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F89EA0EE-BEB2-468B-ACDE-59EFB5694C11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F89EA0EE-BEB2-468B-ACDE-59EFB5694C11}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -463,6 +469,7 @@ Global
 		{48EA4DDA-3B1E-46B0-AF4D-13AA46E921D0} = {A6B92883-EBFB-4DFE-9817-52EC7E1EDB0C}
 		{9A7681D2-FE7A-4377-833F-AC0924E9245E} = {DD29F439-3F33-4B7E-AD95-DF6B54430782}
 		{06396B37-AEAE-4E3A-92B6-224AD6A95690} = {DD29F439-3F33-4B7E-AD95-DF6B54430782}
+		{F89EA0EE-BEB2-468B-ACDE-59EFB5694C11} = {DD29F439-3F33-4B7E-AD95-DF6B54430782}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DAE1FE41-2A28-4586-8E87-957795F61EB2}
