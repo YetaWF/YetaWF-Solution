@@ -2,7 +2,7 @@
 
 namespace YetaWF {
 
-    public class MvcApplication : YetaWF.WebStartup.MvcApplication5 { }
+    public class MvcApplication : YetaWF.Core.WebStartup.MvcApplication5 { }
 
 }
 

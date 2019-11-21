@@ -107,7 +107,6 @@ gulp.task('minify-js', () => {
     return gulp.src(["Addons/**/*.js",
             "AddonsCustom/**/*.js",
             "node_modules/jquery-validation-unobtrusive/*.js",
-            "node_modules/urijs/src/*.js",
             "!**/*.min.js",
             "!**/*.pack.js"
         ], { follow: true })
