@@ -1,7 +1,12 @@
-﻿/* Copyright © 2019 Softel vdm, Inc. - https://yetawf.com/Documentation/YetaWF/Licensing */
+﻿/* Copyright © 2020 Softel vdm, Inc. - https://yetawf.com/Documentation/YetaWF/Licensing */
 
 // If you get a message like "node sass could not find a binding for your current environment: windows 64-bit with node.js 4.x"
 // when running sass, use "npm rebuild node-sass".
+// VS 2019: node-gyp can't find VS2019 MSBuild:
+// Change C:\Development\YetaWF nginx\Website\node_modules\node-gyp\lib\configure.js
+// variables['msbuild_path'] = path.join(vsSetup.path, 'MSBuild', '15.0',
+// to
+// variables['msbuild_path'] = path.join(vsSetup.path, 'MSBuild', 'Current',
 
 var gulp = require('gulp');
 var print = require('gulp-print').default;
@@ -106,8 +111,6 @@ var minify = require("gulp-minify");
 gulp.task('minify-js', () => {
     return gulp.src(["Addons/**/*.js",
             "AddonsCustom/**/*.js",
-            "node_modules/jquery-validation-unobtrusive/*.js",
-            "node_modules/urijs/src/*.js",
             "!**/*.min.js",
             "!**/*.pack.js"
         ], { follow: true })
@@ -152,14 +155,14 @@ gulp.task('minify-css', () => {
 
 /* Copy required *.d.ts files */
 var dtsFolders = [
-    "AddOns/YetaWF/Core/_Addons/Basics/*.d.ts",
-    "AddOns/YetaWF/Core/_Addons/Forms/*.d.ts",
-    "AddOns/YetaWF/Core/_Addons/Popups/*.d.ts",
-    "AddOns/YetaWF/ComponentsHTML/_Addons/Forms/*.d.ts",
-    "AddOns/YetaWF/ComponentsHTML/_Addons/Popups/*.d.ts",
-    "AddOns/YetaWF/ComponentsHTML/_Main/ComponentsHTML.d.ts",
-    "AddOns/YetaWF/ComponentsHTML/_Main/Controls.d.ts",
-    "AddOns/YetaWF/ComponentsHTML/_Templates/**/*.d.ts"
+    "Addons/YetaWF/Core/_Addons/Basics/*.d.ts",
+    "Addons/YetaWF/Core/_Addons/Forms/*.d.ts",
+    "Addons/YetaWF/Core/_Addons/Popups/*.d.ts",
+    "Addons/YetaWF/ComponentsHTML/_Addons/Forms/*.d.ts",
+    "Addons/YetaWF/ComponentsHTML/_Addons/Popups/*.d.ts",
+    "Addons/YetaWF/ComponentsHTML/_Main/ComponentsHTML.d.ts",
+    "Addons/YetaWF/ComponentsHTML/_Main/Controls.d.ts",
+    "Addons/YetaWF/ComponentsHTML/_Templates/**/*.d.ts",
 ];
 gulp.task('copydts', function () {
     return gulp.src(dtsFolders, { follow: true })
